@@ -148,16 +148,14 @@
         <nav class="flex flex-col gap-8 text-center">
             <a href="#sluzby" onclick="toggleMobileMenu()"
                 class="text-3xl font-cormorant text-stone-900 hover:text-stone-500 transition-colors">Služby</a>
-            <a href="#cenik" onclick="toggleMobileMenu()"
-                class="text-3xl font-cormorant text-stone-900 hover:text-stone-500 transition-colors">Ceník</a>
             <a href="#filozofie" onclick="toggleMobileMenu()"
                 class="text-3xl font-cormorant text-stone-900 hover:text-stone-500 transition-colors">Filozofie</a>
             <a href="#majitelka" onclick="toggleMobileMenu()"
                 class="text-3xl font-cormorant text-stone-900 hover:text-stone-500 transition-colors">O nás</a>
-            <a href="#faq" onclick="toggleMobileMenu()"
-                class="text-3xl font-cormorant text-stone-900 hover:text-stone-500 transition-colors">FAQ</a>
             <a href="#poukazy" onclick="toggleMobileMenu()"
                 class="text-3xl font-cormorant text-stone-900 hover:text-stone-500 transition-colors">Poukazy</a>
+            <a href="#kontakt" onclick="toggleMobileMenu()"
+                class="text-3xl font-cormorant text-stone-900 hover:text-stone-500 transition-colors">Kontakt</a>
         </nav>
         <button onclick="openBookingModal()"
             class="mt-12 border border-stone-900 text-stone-900 px-8 py-3 hover:bg-stone-900 hover:text-white transition-all duration-300 font-geist uppercase tracking-widest text-sm">
@@ -176,10 +174,10 @@
             <div
                 class="hidden md:flex gap-8 lg:gap-10 items-center text-xs lg:text-sm uppercase tracking-widest text-stone-600 font-light font-geist">
                 <a href="#sluzby" class="hover:text-stone-900 transition-colors">Služby</a>
-                <a href="#cenik" class="hover:text-stone-900 transition-colors">Ceník</a>
                 <a href="#filozofie" class="hover:text-stone-900 transition-colors">Filozofie</a>
                 <a href="#majitelka" class="hover:text-stone-900 transition-colors">O nás</a>
                 <a href="#poukazy" class="hover:text-stone-900 transition-colors">Poukazy</a>
+                <a href="#kontakt" class="hover:text-stone-900 transition-colors">Kontakt</a>
                 <button onclick="openBookingModal()"
                     class="border border-stone-900 text-stone-900 px-6 py-2 hover:bg-stone-900 hover:text-white transition-all duration-300 uppercase font-light">
                     Rezervace
@@ -609,14 +607,16 @@
                 </div>
 
                 <!-- Kontakt Column -->
-                <div class="md:col-span-1">
+                <div class="md:col-span-1" id="kontakt">
                     <h3 class="font-cormorant text-2xl md:text-3xl mb-6 text-stone-900">Kontakt</h3>
                     <div class="space-y-3 font-geist text-stone-500 font-light text-sm tracking-wide">
-                        <p class="">Vinohradská 35, 120 00 Praha 2</p>
+                        <p class="font-medium text-stone-700">SW Beauty s.r.o.</p>
+                        <p class="">U Cihelny 1326/4<br>695 01 Hodonín</p>
                         <p class=""><a href="mailto:info@swbeauty.cz"
                                 class="hover:text-stone-900 transition-colors">info@swbeauty.cz</a></p>
-                        <p class=""><a href="tel:+420123456789" class="hover:text-stone-900 transition-colors">+420 123
-                                456 789</a></p>
+                        <p class=""><a href="tel:+420776632498" class="hover:text-stone-900 transition-colors">+420 776
+                                632 498</a></p>
+                        <p class="text-xs text-stone-400 mt-4">Otevírací doba: na objednávku</p>
                     </div>
                 </div>
 
