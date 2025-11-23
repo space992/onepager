@@ -1,0 +1,1456 @@
+<html lang="cs" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SW Beauty | Luxusní péče a sebevědomí</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap"
+        rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #FDFBF7;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #d6d3d1;
+            border-radius: 3px;
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Range Slider Styling */
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 16px;
+            width: 16px;
+            border-radius: 50%;
+            background: #1c1917;
+            cursor: pointer;
+            margin-top: -6px;
+        }
+
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 2px;
+            cursor: pointer;
+            background: #e7e5e4;
+        }
+
+        /* Animations */
+        @keyframes fade-in-up {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fade-in-up 0.4s ease-out forwards;
+        }
+
+        /* Accordion Animation */
+        details>summary {
+            list-style: none;
+        }
+
+        details>summary::-webkit-details-marker {
+            display: none;
+        }
+
+        details[open] summary~* {
+            animation: sweep .3s ease-in-out;
+        }
+
+        @keyframes sweep {
+            0% {
+                opacity: 0;
+                transform: translateY(-10px)
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+    </style>
+    <style id="aura-editor-visibility-style">
+        .invisible {
+            visibility: hidden !important;
+        }
+    </style>
+    <meta name="disabled-font-classes"
+        content="font-instrument-serif,font-roboto,font-montserrat,font-poppins,font-merriweather,font-bricolage,font-jakarta,font-manrope,font-space-grotesk,font-work-sans,font-pt-serif,font-geist-mono,font-space-mono,font-nunito,font-quicksand">
+
+    <link id="all-fonts-link-font-cormorant" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&amp;display=swap">
+    <style id="all-fonts-style-font-cormorant">
+        .font-cormorant {
+            font-family: 'Cormorant Garamond', serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-geist" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap">
+    <style id="all-fonts-style-font-geist">
+        .font-geist {
+            font-family: 'Geist', sans-serif !important;
+        }
+    </style>
+    <link id="all-fonts-link-font-playfair" rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap">
+    <style id="all-fonts-style-font-playfair">
+        .font-playfair {
+            font-family: 'Playfair Display', serif !important;
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-stone-200 selection:text-stone-900 text-stone-800 relative">
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenu"
+        class="fixed inset-0 z-50 bg-white transform translate-x-full transition-transform duration-500 ease-in-out flex flex-col justify-center items-center">
+        <button onclick="toggleMobileMenu()"
+            class="absolute top-8 right-8 text-stone-900 p-2 hover:bg-stone-100 rounded-full transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-x">
+                <path d="M18 6 6 18"></path>
+                <path d="m6 6 12 12"></path>
+            </svg>
+        </button>
+        <nav class="flex flex-col gap-8 text-center">
+            <a href="#sluzby" onclick="toggleMobileMenu()"
+                class="text-3xl font-cormorant text-stone-900 hover:text-stone-500 transition-colors">Služby</a>
+            <a href="#cenik" onclick="toggleMobileMenu()"
+                class="text-3xl font-cormorant text-stone-900 hover:text-stone-500 transition-colors">Ceník</a>
+            <a href="#filozofie" onclick="toggleMobileMenu()"
+                class="text-3xl font-cormorant text-stone-900 hover:text-stone-500 transition-colors">Filozofie</a>
+            <a href="#majitelka" onclick="toggleMobileMenu()"
+                class="text-3xl font-cormorant text-stone-900 hover:text-stone-500 transition-colors">O nás</a>
+            <a href="#faq" onclick="toggleMobileMenu()"
+                class="text-3xl font-cormorant text-stone-900 hover:text-stone-500 transition-colors">FAQ</a>
+            <a href="#poukazy" onclick="toggleMobileMenu()"
+                class="text-3xl font-cormorant text-stone-900 hover:text-stone-500 transition-colors">Poukazy</a>
+        </nav>
+        <button onclick="openBookingModal()"
+            class="mt-12 border border-stone-900 text-stone-900 px-8 py-3 hover:bg-stone-900 hover:text-white transition-all duration-300 font-geist uppercase tracking-widest text-sm">
+            Rezervovat termín
+        </button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 left-0 z-40 bg-transparent border-b border-transparent" id="navbar">
+        <div class="max-w-screen-2xl mx-auto flex items-center justify-between px-6 py-5 md:px-12" id="navbarContainer">
+            <a href="#" id="navbarLogo"
+                class="text-5xl text-stone-900 tracking-tight font-medium font-cormorant relative z-50 origin-left">
+                SW Beauty.
+            </a>
+
+            <div
+                class="hidden md:flex gap-8 lg:gap-10 items-center text-xs lg:text-sm uppercase tracking-widest text-stone-600 font-light font-geist">
+                <a href="#sluzby" class="hover:text-stone-900 transition-colors">Služby</a>
+                <a href="#cenik" class="hover:text-stone-900 transition-colors">Ceník</a>
+                <a href="#filozofie" class="hover:text-stone-900 transition-colors">Filozofie</a>
+                <a href="#majitelka" class="hover:text-stone-900 transition-colors">O nás</a>
+                <a href="#poukazy" class="hover:text-stone-900 transition-colors">Poukazy</a>
+                <button onclick="openBookingModal()"
+                    class="border border-stone-900 text-stone-900 px-6 py-2 hover:bg-stone-900 hover:text-white transition-all duration-300 uppercase font-light">
+                    Rezervace
+                </button>
+            </div>
+
+            <!-- Mobile Menu Icon -->
+            <button onclick="toggleMobileMenu()" class="md:hidden text-stone-900 p-2 -mr-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                    class="lucide lucide-menu w-6 h-6">
+                    <path d="M4 5h16"></path>
+                    <path d="M4 12h16"></path>
+                    <path d="M4 19h16"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative w-full min-h-screen flex flex-col lg:flex-row pt-24 lg:pt-0 lg:items-center">
+        <!-- Text Content -->
+        <div
+            class="w-full lg:w-5/12 flex flex-col justify-center px-6 pt-12 pb-12 md:px-12 lg:pl-24 xl:pl-32 lg:py-0 order-2 lg:order-1">
+
+            <h1
+                class="text-5xl md:text-6xl xl:text-7xl leading-[1.1] font-medium text-stone-900 tracking-tighter font-cormorant mb-8">
+                Místo, kde se venkovní krása spojí s
+                <span class="italic font-normal">vnitřní</span>.
+            </h1>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+                <button onclick="openBookingModal()"
+                    class="min-w-[180px] text-center bg-stone-900 text-white px-8 py-4 hover:bg-stone-800 transition-colors duration-300 font-geist text-sm tracking-widest uppercase">Rezervovat
+                    termín</button>
+                <a href="#sluzby"
+                    class="min-w-[180px] text-center border border-stone-300 text-stone-900 px-8 py-4 hover:border-stone-900 transition-colors duration-300 font-geist text-sm tracking-widest uppercase">Prohlédnout
+                    služby</a>
+            </div>
+        </div>
+
+        <!-- Image Content -->
+        <div
+            class="w-full lg:w-7/12 h-[60vh] lg:h-auto relative order-1 lg:order-2 lg:py-12 lg:pr-12 flex items-center justify-center">
+            <div
+                class="absolute inset-0 lg:relative lg:inset-auto lg:h-[80vh] lg:w-auto lg:aspect-[3/4] lg:shadow-2xl overflow-hidden">
+                <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/ff9ee43a-d206-44ef-851c-c74c3c8ed87b_3840w.jpg"
+                    alt="SW Beauty Editorial Portrait"
+                    class="w-full h-full object-cover object-center opacity-90 animate-fade-in-up">
+            </div>
+            <div
+                class="absolute top-0 right-0 bottom-0 left-0 bg-gradient-to-l from-transparent to-cream-50/20 lg:hidden">
+            </div>
+        </div>
+    </header>
+
+    <!-- Sticky Scroll Services Section (Airy & Floating Variant) -->
+    <section id="sluzby" class="relative bg-white">
+        <div class="flex flex-col lg:flex-row min-h-screen">
+            <!-- Left Side: Content -->
+            <div
+                class="w-full lg:w-1/2 py-32 px-6 md:px-12 lg:pl-24 xl:pl-32 z-10 bg-white flex flex-col justify-center">
+                <div class="mb-24">
+                    <span class="text-stone-400 uppercase tracking-widest text-xs mb-3 block font-geist">Naše
+                        péče</span>
+                    <h2 class="text-2xl md:text-3xl font-medium tracking-tight font-cormorant text-stone-500">
+                        Služby
+                    </h2>
+                </div>
+
+                <div class="space-y-12" id="servicesList">
+                    <!-- Service 1 -->
+                    <div class="service-item group cursor-pointer"
+                        onmouseenter="changeServiceImage('img-endosphere-body')">
+                        <h3
+                            class="text-5xl md:text-6xl lg:text-7xl font-medium font-cormorant text-stone-200 group-hover:text-stone-900 transition-colors duration-500">
+                            Endosphere Therapy Tělo
+                        </h3>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="service-item group cursor-pointer"
+                        onmouseenter="changeServiceImage('img-endosphere-face')">
+                        <h3
+                            class="text-5xl md:text-6xl lg:text-7xl font-medium font-cormorant text-stone-200 group-hover:text-stone-900 transition-colors duration-500">
+                            Endosphere Therapy Obličej
+                        </h3>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="service-item group cursor-pointer" onmouseenter="changeServiceImage('img-hifu')">
+                        <h3
+                            class="text-5xl md:text-6xl lg:text-7xl font-medium font-cormorant text-stone-200 group-hover:text-stone-900 transition-colors duration-500">
+                            HIFU Lifting
+                        </h3>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="service-item group cursor-pointer" onmouseenter="changeServiceImage('img-hair-meso')">
+                        <h3
+                            class="text-5xl md:text-6xl lg:text-7xl font-medium font-cormorant text-stone-200 group-hover:text-stone-900 transition-colors duration-500">
+                            Vlasová mezoterapie
+                        </h3>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div class="service-item group cursor-pointer" onmouseenter="changeServiceImage('img-hair-ext')">
+                        <h3
+                            class="text-5xl md:text-6xl lg:text-7xl font-medium font-cormorant text-stone-200 group-hover:text-stone-900 transition-colors duration-500">
+                            Prodlužování vlasů
+                        </h3>
+                    </div>
+
+                    <!-- Service 6 -->
+                    <div class="service-item group cursor-pointer" onmouseenter="changeServiceImage('img-lashes')">
+                        <h3
+                            class="text-5xl md:text-6xl lg:text-7xl font-medium font-cormorant text-stone-200 group-hover:text-stone-900 transition-colors duration-500">
+                            Lash Lift & Tint
+                        </h3>
+                    </div>
+
+                    <!-- Service 7 -->
+                    <div class="service-item group cursor-pointer" onmouseenter="changeServiceImage('img-brows')">
+                        <h3
+                            class="text-5xl md:text-6xl lg:text-7xl font-medium font-cormorant text-stone-200 group-hover:text-stone-900 transition-colors duration-500">
+                            Brow Lamination
+                        </h3>
+                    </div>
+
+                    <!-- Service 8 -->
+                    <div class="service-item group cursor-pointer"
+                        onmouseenter="changeServiceImage('img-consultation')">
+                        <h3
+                            class="text-5xl md:text-6xl lg:text-7xl font-medium font-cormorant text-stone-200 group-hover:text-stone-900 transition-colors duration-500">
+                            Konzultace
+                        </h3>
+                    </div>
+                </div>
+
+                <div class="mt-24">
+                    <button onclick="openPriceList()"
+                        class="inline-block border-b border-stone-900 text-stone-900 pb-1 font-geist text-sm uppercase tracking-widest hover:text-stone-600 hover:border-stone-600 transition-colors">
+                        Zobrazit ceník
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Side: Floating Sticky Image -->
+            <div
+                class="hidden lg:flex w-1/2 h-screen sticky top-0 right-0 items-center justify-center pointer-events-none">
+                <!-- Image Card -->
+                <div class="relative w-[400px] aspect-[3/4] overflow-hidden shadow-2xl bg-stone-100">
+                    <div id="serviceImages" class="w-full h-full relative">
+                        <!-- Endosphere Body -->
+                        <img id="img-endosphere-body"
+                            src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg"
+                            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100"
+                            alt="Endosphere Body">
+
+                        <!-- Endosphere Face -->
+                        <img id="img-endosphere-face"
+                            src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg"
+                            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
+                            alt="Endosphere Face">
+
+                        <!-- HIFU Image -->
+                        <img id="img-hifu"
+                            src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2070&auto=format&fit=crop"
+                            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
+                            alt="HIFU">
+
+                        <!-- Hair Meso -->
+                        <img id="img-hair-meso"
+                            src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4734259a-bad7-422f-981e-ce01e79184f2_1600w.jpg"
+                            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
+                            alt="Hair Meso">
+
+                        <!-- Hair Ext -->
+                        <img id="img-hair-ext"
+                            src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4734259a-bad7-422f-981e-ce01e79184f2_1600w.jpg"
+                            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
+                            alt="Hair Ext">
+
+                        <!-- Lashes -->
+                        <img id="img-lashes"
+                            src="https://images.unsplash.com/photo-1587776536548-2287c2a78482?q=80&w=1974&auto=format&fit=crop"
+                            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
+                            alt="Lashes">
+
+                        <!-- Brows -->
+                        <img id="img-brows"
+                            src="https://images.unsplash.com/photo-1587776536548-2287c2a78482?q=80&w=1974&auto=format&fit=crop"
+                            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
+                            alt="Brows">
+
+                        <!-- Consultation Image -->
+                        <img id="img-consultation"
+                            src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/eab40de0-94a4-45eb-b924-345850d0201b_800w.jpg"
+                            class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 grayscale-[20%]"
+                            alt="Consultation">
+
+                        <!-- Overlay Gradient (Optional, lighter for this design) -->
+                        <div class="absolute inset-0 bg-stone-900/5 pointer-events-none"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Philosophy Section -->
+    <section id="filozofie" class="bg-white py-24 md:py-32">
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+            <div class="w-full lg:w-1/2 relative">
+                <div class="aspect-[4/5] bg-stone-100 overflow-hidden">
+                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4734259a-bad7-422f-981e-ce01e79184f2_1600w.jpg"
+                        alt="SW Beauty Interior" class="w-full h-full object-cover grayscale-[10%]">
+                </div>
+                <!-- Decorative element -->
+                <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-[#F5F2EA] -z-10"></div>
+            </div>
+
+            <div class="w-full lg:w-1/2 lg:pr-12">
+                <span class="text-stone-400 uppercase tracking-widest text-xs mb-6 block font-geist">
+                    O SW Beauty
+                </span>
+                <h2
+                    class="text-4xl md:text-5xl lg:text-6xl tracking-tight mb-8 leading-tight font-medium font-cormorant">
+                    Každá žena si zaslouží cítit se
+                    <span class="text-stone-600 italic">výjimečně</span>.
+                </h2>
+                <div class="space-y-6 text-lg text-stone-600 font-light leading-relaxed font-geist">
+                    <p>
+                        Nejsme jen další kosmetický salon. Jsme místem, kde se zastaví čas
+                        a pozornost se obrací jen k vám. V SW Beauty věříme, že péče o
+                        sebe není luxus, ale základní kámen zdravého sebevědomí.
+                    </p>
+                    <p>
+                        Kombinujeme high-tech přístroje s dotekem lidské ruky.
+                        Diskrétnost, empatie a maximální komfort jsou pro nás stejně
+                        důležité jako samotný výsledek procedury.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Section -->
+    <section id="majitelka" class="py-24 md:py-32 px-6 md:px-12 bg-[#F9F8F6]">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="w-full md:w-5/12">
+                    <div class="aspect-[3/4] relative">
+                        <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/eab40de0-94a4-45eb-b924-345850d0201b_800w.jpg"
+                            alt="Sabina - Majitelka"
+                            class="w-full h-full object-cover shadow-xl shadow-stone-200/50 grayscale-[10%]">
+                    </div>
+                </div>
+                <div class="w-full md:w-7/12">
+                    <h3 class="text-3xl md:text-4xl mb-6 tracking-tight font-medium font-cormorant">
+                        Slovo zakladatelky
+                    </h3>
+                    <p class="text-lg text-stone-600 font-light leading-relaxed mb-6 font-geist">
+                        "Mým cílem bylo vytvořit prostor, který propojuje medicínskou
+                        efektivitu s atmosférou luxusního spa. Specializuji se na
+                        procedury, které přináší reálné výsledky, aniž bychom zasahovali
+                        do přirozené krásy ženy."
+                    </p>
+                    <p class="text-lg text-stone-600 font-light leading-relaxed mb-8 font-geist">
+                        Každou klientku vnímám individuálně. Neexistuje univerzální
+                        řešení, existuje jen to, co je nejlepší pro vás a vaši pleť v daný
+                        okamžik.
+                    </p>
+                    <div class="font-cormorant text-2xl italic text-stone-900">
+                        Sabina, SW Beauty
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section (NEW) -->
+    <section id="faq" class="py-24 px-6 md:px-12 max-w-3xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-medium tracking-tight font-cormorant mb-4">
+                Časté dotazy
+            </h2>
+        </div>
+
+        <div class="space-y-4">
+            <details class="group border-b border-stone-200 pb-4">
+                <summary
+                    class="flex justify-between items-center cursor-pointer py-4 list-none text-xl font-cormorant text-stone-900">
+                    <span>Je ošetření Endosphere bolestivé?</span>
+                    <span class="transition group-open:rotate-180">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-chevron-down text-stone-400">
+                            <path d="m6 9 6 6 6-6"></path>
+                        </svg>
+                    </span>
+                </summary>
+                <p class="text-stone-500 font-light font-geist mt-2 leading-relaxed pb-4">
+                    Vůbec ne. Endospheres Therapy je neinvazivní a klienti ji často popisují jako intenzivní hlubokou
+                    masáž. Intenzitu vždy přizpůsobujeme vašemu prahu citlivosti.
+                </p>
+            </details>
+
+            <details class="group border-b border-stone-200 pb-4">
+                <summary
+                    class="flex justify-between items-center cursor-pointer py-4 list-none text-xl font-cormorant text-stone-900">
+                    <span>Jak dlouho trvá rekonvalescence po HIFU?</span>
+                    <span class="transition group-open:rotate-180">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-chevron-down text-stone-400">
+                            <path d="m6 9 6 6 6-6"></path>
+                        </svg>
+                    </span>
+                </summary>
+                <p class="text-stone-500 font-light font-geist mt-2 leading-relaxed pb-4">
+                    HIFU je tzv. "lunch-time" procedura. Můžete se okamžitě vrátit do práce nebo společnosti. Mírné
+                    zarudnutí zmizí do hodiny po ošetření.
+                </p>
+            </details>
+
+            <details class="group border-b border-stone-200 pb-4">
+                <summary
+                    class="flex justify-between items-center cursor-pointer py-4 list-none text-xl font-cormorant text-stone-900">
+                    <span>Musím se objednat předem?</span>
+                    <span class="transition group-open:rotate-180">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-chevron-down text-stone-400">
+                            <path d="m6 9 6 6 6-6"></path>
+                        </svg>
+                    </span>
+                </summary>
+                <p class="text-stone-500 font-light font-geist mt-2 leading-relaxed pb-4">
+                    Ano, pracujeme výhradně na objednání, abychom každé klientce zaručili 100% soukromí a čas. Rezervaci
+                    můžete provést online nebo telefonicky.
+                </p>
+            </details>
+        </div>
+    </section>
+
+    <!-- Gift Cards Section -->
+    <section id="poukazy" class="py-32 px-6 bg-white text-stone-900 text-center border-t border-stone-100">
+        <div class="max-w-2xl mx-auto">
+            <h2 class="text-5xl md:text-7xl tracking-tighter mb-6 font-medium font-cormorant">
+                Darujte krásu
+            </h2>
+            <p class="text-stone-500 text-lg md:text-xl font-light mb-10 max-w-md mx-auto leading-relaxed font-geist">
+                Nejkrásnějším dárkem je čas a péče. Vytvořte osobní dárkový poukaz během okamžiku.
+            </p>
+            <button onclick="openModal()"
+                class="inline-flex items-center gap-3 bg-stone-900 text-white px-8 py-4 hover:bg-stone-800 transition-all duration-300 tracking-widest text-sm uppercase font-geist font-medium">
+                <span class="">Vytvořit poukaz</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    data-lucide="arrow-right" class="lucide lucide-arrow-right w-4 h-4">
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="py-24 px-6 md:px-12 max-w-4xl mx-auto text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="quote"
+            class="lucide lucide-quote w-8 h-8 text-stone-300 mx-auto mb-8">
+            <path
+                d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z">
+            </path>
+            <path
+                d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z">
+            </path>
+        </svg>
+        <h2 class="sr-only font-geist">
+            Reference
+        </h2>
+
+        <div class="space-y-12">
+            <figure class="">
+                <blockquote
+                    class="text-2xl md:text-3xl text-stone-800 leading-normal tracking-tight mb-6 font-medium font-cormorant">
+                    "Absolutně profesionální přístup. Po sérii ošetření Endosphere se
+                    cítím jako znovuzrozená. Prostředí je nádherné a uklidňující."
+                </blockquote>
+                <figcaption class="text-stone-500 uppercase text-xs tracking-widest font-medium font-geist">
+                    — Petra K., Klientka
+                </figcaption>
+            </figure>
+
+            <figure class="hidden md:block pt-8 border-t border-stone-100">
+                <blockquote
+                    class="text-2xl md:text-3xl text-stone-800 leading-normal tracking-tight mb-6 font-medium font-cormorant">
+                    "SW Beauty navštěvuji pravidelně. Sabina přesně ví, co moje pleť
+                    potřebuje. Není to jen kosmetika, je to zážitek."
+                </blockquote>
+                <figcaption class="text-stone-500 uppercase text-xs tracking-widest font-medium font-geist">
+                    — Veronika M., Klientka
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="md:px-12 overflow-hidden text-stone-900 border-stone-100 border-t pt-24 pb-6 relative">
+        <div class="max-w-screen-2xl mx-auto relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-24 md:mb-48 px-6 md:px-0">
+
+                <!-- Služby Column -->
+                <div class="md:col-span-1">
+                    <h3 class="font-cormorant text-2xl md:text-3xl mb-6 text-stone-900">Služby</h3>
+                    <ul class="space-y-3 font-geist text-stone-500 font-light text-sm tracking-wide">
+                        <li class=""><a href="#sluzby" class="hover:text-stone-900 transition-colors">Endosphere
+                                Therapy</a></li>
+                        <li><a href="#sluzby" class="hover:text-stone-900 transition-colors">HIFU Lifting</a></li>
+                        <li><a href="#sluzby" class="hover:text-stone-900 transition-colors">Vlasová péče</a></li>
+                        <li class=""><a href="#cenik" class="hover:text-stone-900 transition-colors">Kompletní ceník</a>
+                        </li>
+                        <li class=""><a href="#poukazy" class="hover:text-stone-900 transition-colors">Dárkové
+                                poukazy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kontakt Column -->
+                <div class="md:col-span-1">
+                    <h3 class="font-cormorant text-2xl md:text-3xl mb-6 text-stone-900">Kontakt</h3>
+                    <div class="space-y-3 font-geist text-stone-500 font-light text-sm tracking-wide">
+                        <p class="">Vinohradská 35, 120 00 Praha 2</p>
+                        <p class=""><a href="mailto:info@swbeauty.cz"
+                                class="hover:text-stone-900 transition-colors">info@swbeauty.cz</a></p>
+                        <p class=""><a href="tel:+420123456789" class="hover:text-stone-900 transition-colors">+420 123
+                                456 789</a></p>
+                    </div>
+                </div>
+
+                <!-- Socials Column -->
+                <div class="md:col-span-1">
+                    <h3 class="font-cormorant text-2xl md:text-3xl mb-6 text-stone-900">Sociální sítě</h3>
+                    <ul class="space-y-3 font-geist text-stone-500 font-light text-sm tracking-wide">
+                        <li class=""><a href="#" class="hover:text-stone-900 transition-colors">Instagram</a></li>
+                        <li class=""><a href="#" class="hover:text-stone-900 transition-colors">Facebook</a></li>
+                    </ul>
+                </div>
+
+                <!-- Empty Column -->
+                <div class="md:col-span-1"></div>
+            </div>
+
+            <!-- Bottom Section with Giant Editorial Text & Copyright -->
+            <div
+                class="flex flex-col md:flex-row items-end justify-between border-t border-stone-200 pt-8 md:pt-0 md:border-none px-6 md:px-0">
+                <!-- Copyright -->
+                <div class="order-2 md:order-1 mt-12 md:mt-0 self-start md:self-end">
+                    <p class="text-xs text-stone-400 font-geist tracking-widest uppercase">© 2024 SW Beauty. Všechna
+                        práva vyhrazena.</p>
+                </div>
+
+                <!-- Giant Brand Name -->
+                <div class="order-1 md:order-2 w-full md:w-auto text-right select-none pointer-events-none">
+                    <div
+                        class="font-cormorant text-[20vw] md:text-[12rem] lg:text-[15rem] leading-[0.85] text-white tracking-tighter mix-blend-hard-light drop-shadow-sm lg:drop-shadow-none lg:text-[#EBE8E0]">
+                        <div class="block">SW</div>
+                        <div class="block ml-[0.5em] md:ml-0">Beauty</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GIFT CARD MODAL -->
+    <div id="giftModal" class="fixed inset-0 z-50 hidden">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-stone-900/60 backdrop-blur-sm transition-opacity" onclick="closeModal()"></div>
+
+        <!-- Modal Content -->
+        <div class="absolute inset-0 flex items-center justify-center p-4">
+            <div
+                class="bg-stone-50 w-full max-w-5xl h-auto max-h-[90vh] overflow-y-auto shadow-2xl flex flex-col lg:flex-row relative animate-fade-in-up">
+                <button onclick="closeModal()"
+                    class="absolute top-4 right-4 z-10 p-2 text-stone-400 hover:text-stone-900 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        data-lucide="x" class="lucide lucide-x w-6 h-6">
+                        <path d="M18 6 6 18"></path>
+                        <path d="m6 6 12 12"></path>
+                    </svg>
+                </button>
+
+                <!-- Left Side: Visual Preview -->
+                <div
+                    class="w-full lg:w-5/12 bg-stone-100 p-8 lg:p-12 flex flex-col justify-center items-center sticky top-0">
+                    <h3 class="text-stone-500 uppercase tracking-widest text-xs mb-8 font-geist">
+                        Náhled poukazu
+                    </h3>
+
+                    <!-- The Card Visual -->
+                    <div id="cardPreview"
+                        class="w-full aspect-[1.6/1] bg-white shadow-xl p-6 md:p-8 flex flex-col justify-between border border-stone-200 relative overflow-hidden">
+                        <!-- Subtle Background Pattern -->
+                        <div
+                            class="absolute top-0 right-0 w-24 h-24 bg-[#F5F2EA] rounded-bl-full opacity-50 -mr-4 -mt-4">
+                        </div>
+
+                        <div class="flex justify-between items-start z-10">
+                            <span class="text-xl md:text-2xl tracking-tight text-stone-900 font-medium font-sans">
+                                SW Beauty.
+                            </span>
+                        </div>
+
+                        <div class="text-center z-10 my-4">
+                            <span class="block text-stone-400 text-xs uppercase tracking-wider mb-2 font-geist">
+                                Věnováno
+                            </span>
+                            <span id="previewName"
+                                class="text-2xl md:text-3xl text-stone-800 break-words font-medium font-cormorant">
+                                Vaše Jméno
+                            </span>
+                            <p id="previewNote"
+                                class="text-xs text-stone-500 mt-2 italic font-light max-w-[80%] mx-auto line-clamp-2">
+                            </p>
+                        </div>
+
+                        <div class="flex justify-between items-end border-t border-stone-100 pt-4 z-10">
+                            <span class="text-[10px] md:text-xs text-stone-400 uppercase tracking-widest font-geist">
+                                Dárkový poukaz
+                            </span>
+                            <span id="previewValue" class="font-medium text-lg md:text-xl text-stone-900 font-geist">
+                                2 000 Kč
+                            </span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-stone-400 mt-6 text-center font-light font-geist">
+                        Vizuál poukazu je ilustrační. Finální verze vám přijde e-mailem.
+                    </p>
+                </div>
+
+                <!-- Right Side: Configuration Form -->
+                <div class="w-full lg:w-7/12 p-8 lg:p-12 bg-white">
+                    <h2 class="text-3xl tracking-tight mb-2 font-medium font-cormorant">
+                        Nakonfigurujte poukaz
+                    </h2>
+                    <p class="text-stone-500 font-light mb-8 text-sm font-geist">
+                        Vyplňte údaje pro vytvoření dárku.
+                    </p>
+
+                    <form onsubmit="event.preventDefault(); submitForm();" class="space-y-6">
+                        <!-- Type Selection -->
+                        <div>
+                            <label class="block text-xs uppercase tracking-widest text-stone-500 mb-3 font-geist">
+                                Typ poukazu
+                            </label>
+                            <div class="flex gap-4">
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="type" value="cash" class="peer sr-only" checked=""
+                                        onchange="toggleType('cash')">
+                                    <span
+                                        class="block px-4 py-2 border border-stone-200 text-sm hover:border-stone-400 peer-checked:bg-stone-900 peer-checked:text-white peer-checked:border-stone-900 transition-all font-geist">
+                                        Na částku
+                                    </span>
+                                </label>
+                                <label class="cursor-pointer">
+                                    <input type="radio" name="type" value="service" class="peer sr-only"
+                                        onchange="toggleType('service')">
+                                    <span
+                                        class="block px-4 py-2 border border-stone-200 text-sm hover:border-stone-400 peer-checked:bg-stone-900 peer-checked:text-white peer-checked:border-stone-900 transition-all font-geist">
+                                        Na proceduru
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Amount Slider (Cash) -->
+                        <div id="cashInput" class="space-y-2">
+                            <div class="flex justify-between text-sm mb-2">
+                                <span class="text-stone-600 font-geist">
+                                    Hodnota poukazu
+                                </span>
+                                <span class="font-medium text-stone-900 font-geist" id="amountDisplay">
+                                    2 000 Kč
+                                </span>
+                            </div>
+                            <input type="range" min="1000" max="20000" step="500" value="2000" class="w-full"
+                                oninput="updateAmount(this.value)">
+                            <div class="flex justify-between text-xs text-stone-400 font-light pt-1">
+                                <span class="font-geist">
+                                    1 000 Kč
+                                </span>
+                                <span class="font-geist">
+                                    20 000 Kč
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Service Select (Service) - Hidden by default -->
+                        <div id="serviceInput" class="hidden">
+                            <label class="block text-xs uppercase tracking-widest text-stone-500 mb-2 font-geist">
+                                Vyberte proceduru
+                            </label>
+                            <div class="relative">
+                                <select onchange="updateService(this.value)"
+                                    class="w-full appearance-none bg-stone-50 border border-stone-200 p-3 text-stone-800 text-sm focus:outline-none focus:border-stone-500 rounded-none">
+                                    <option value="Endosphere Therapy - Tělo" class="font-geist">
+                                        Endosphere Therapy - Tělo
+                                    </option>
+                                    <option value="Endosphere Therapy - Obličej" class="font-geist">
+                                        Endosphere Therapy - Obličej
+                                    </option>
+                                    <option value="HIFU Lifting - Celý obličej" class="font-geist">
+                                        HIFU Lifting - Celý obličej
+                                    </option>
+                                    <option value="Konzultace + Vstupní ošetření" class="font-geist">
+                                        Konzultace + Vstupní ošetření
+                                    </option>
+                                </select>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" data-lucide="chevron-down"
+                                    class="lucide lucide-chevron-down absolute right-3 top-3.5 w-4 h-4 text-stone-400 pointer-events-none">
+                                    <path d="m6 9 6 6 6-6"></path>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Recipient Details -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-stone-100">
+                            <div class="md:col-span-2">
+                                <label class="block text-xs uppercase tracking-widest text-stone-500 mb-2 font-geist">
+                                    Jméno obdarovaného
+                                </label>
+                                <input type="text" placeholder="Např. Jana Nováková" oninput="updateName(this.value)"
+                                    class="w-full bg-stone-50 border border-stone-200 p-3 text-stone-800 text-sm focus:outline-none focus:border-stone-500 placeholder:text-stone-300"
+                                    required="">
+                            </div>
+
+                            <div class="md:col-span-2">
+                                <label class="block text-xs uppercase tracking-widest text-stone-500 mb-2 font-geist">
+                                    Krátké věnování (volitelné)
+                                </label>
+                                <textarea rows="2" maxlength="60" placeholder="Všechno nejlepší k narozeninám..."
+                                    oninput="updateNote(this.value)"
+                                    class="w-full bg-stone-50 border border-stone-200 p-3 text-stone-800 text-sm focus:outline-none focus:border-stone-500 placeholder:text-stone-300 resize-none"></textarea>
+                                <p class="text-right text-[10px] text-stone-400 mt-1 font-geist">
+                                    Max. 60 znaků
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Buyer Details -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-stone-100">
+                            <div>
+                                <label class="block text-xs uppercase tracking-widest text-stone-500 mb-2 font-geist">
+                                    Váš e-mail
+                                </label>
+                                <input type="email" placeholder="vas@email.cz"
+                                    class="w-full bg-stone-50 border border-stone-200 p-3 text-stone-800 text-sm focus:outline-none focus:border-stone-500"
+                                    required="">
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase tracking-widest text-stone-500 mb-2 font-geist">
+                                    Váš telefon
+                                </label>
+                                <input type="tel" placeholder="+420..."
+                                    class="w-full bg-stone-50 border border-stone-200 p-3 text-stone-800 text-sm focus:outline-none focus:border-stone-500"
+                                    required="">
+                            </div>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="pt-6">
+                            <button type="submit"
+                                class="w-full bg-stone-900 text-white py-4 hover:bg-stone-800 transition-colors text-sm uppercase tracking-widest font-geist">
+                                Odeslat objednávku
+                            </button>
+                            <p class="text-xs text-stone-400 text-center mt-3 font-geist">
+                                Platba probíhá převodem nebo na místě. Po odeslání vás budeme
+                                kontaktovat.
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Logic
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const body = document.body;
+
+            if (menu.classList.contains('translate-x-full')) {
+                menu.classList.remove('translate-x-full');
+                body.style.overflow = 'hidden';
+            } else {
+                menu.classList.add('translate-x-full');
+                body.style.overflow = 'auto';
+            }
+        }
+
+        // Sticky Navbar & Logo Effect (bez GSAP)
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const navbarLogo = document.getElementById('navbarLogo');
+            const navbarContainer = document.getElementById('navbarContainer');
+            const scrollProgress = Math.min(window.scrollY / 150, 1);
+
+            if (scrollProgress > 0.1) {
+                navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+                navbar.style.backdropFilter = 'blur(12px)';
+                navbar.style.boxShadow = '0 1px 2px 0 rgba(0, 0, 0, 0.05)';
+                navbar.style.borderBottomColor = 'rgba(231, 229, 228, 1)';
+
+                const scale = 1 - (scrollProgress * 0.5);
+                navbarLogo.style.transform = `scale(${scale})`;
+
+                navbarContainer.style.paddingTop = '0.75rem';
+                navbarContainer.style.paddingBottom = '0.75rem';
+            } else {
+                navbar.style.backgroundColor = 'transparent';
+                navbar.style.backdropFilter = 'none';
+                navbar.style.boxShadow = 'none';
+                navbar.style.borderBottomColor = 'transparent';
+
+                navbarLogo.style.transform = 'scale(1)';
+
+                navbarContainer.style.paddingTop = '1.25rem';
+                navbarContainer.style.paddingBottom = '1.25rem';
+            }
+        });
+
+        // Modal Logic
+        const modal = document.getElementById('giftModal');
+        const body = document.body;
+
+        function openModal() {
+            modal.classList.remove('hidden');
+            body.style.overflow = 'hidden'; // Prevent scrolling background
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            body.style.overflow = 'auto';
+        }
+
+        // Form & Preview Logic
+        const cashInput = document.getElementById('cashInput');
+        const serviceInput = document.getElementById('serviceInput');
+        const previewValue = document.getElementById('previewValue');
+        const amountDisplay = document.getElementById('amountDisplay');
+        const previewName = document.getElementById('previewName');
+        const previewNote = document.getElementById('previewNote');
+
+        let currentType = 'cash';
+
+        function toggleType(type) {
+            currentType = type;
+            if (type === 'cash') {
+                cashInput.classList.remove('hidden');
+                serviceInput.classList.add('hidden');
+                updateAmount(document.querySelector('input[type=range]').value);
+            } else {
+                cashInput.classList.add('hidden');
+                serviceInput.classList.remove('hidden');
+                updateService(document.querySelector('select').value);
+            }
+        }
+
+        function updateAmount(val) {
+            const formatted = new Intl.NumberFormat('cs-CZ').format(val) + ' Kč';
+            amountDisplay.textContent = formatted;
+            previewValue.textContent = formatted;
+        }
+
+        function updateService(val) {
+            previewValue.textContent = val;
+        }
+
+        function updateName(val) {
+            previewName.textContent = val || 'Vaše Jméno';
+        }
+
+        function updateNote(val) {
+            previewNote.textContent = val;
+        }
+
+        function submitForm() {
+            const btn = document.querySelector('form button[type=submit]');
+            const originalText = btn.textContent;
+
+            btn.textContent = "Odesílám...";
+            btn.disabled = true;
+            btn.classList.add('opacity-75');
+
+            setTimeout(() => {
+                alert('Děkujeme za objednávku! Brzy se vám ozveme s podklady k platbě.');
+                closeModal();
+                btn.textContent = originalText;
+                btn.disabled = false;
+                btn.classList.remove('opacity-75');
+            }, 1500);
+        }
+    </script>
+
+    <!-- BOOKING MODAL -->
+    <div id="bookingModal" class="fixed inset-0 z-[60] hidden">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-stone-900/60 backdrop-blur-sm transition-opacity" onclick="closeBookingModal()">
+        </div>
+
+        <!-- Modal Content -->
+        <div class="absolute inset-0 flex items-center justify-center p-4">
+            <div
+                class="bg-white w-full max-w-4xl h-auto max-h-[90vh] overflow-hidden shadow-2xl flex flex-col relative animate-fade-in-up">
+
+                <!-- Header -->
+                <div class="px-8 py-6 border-b border-stone-100 flex justify-between items-center bg-white z-10">
+                    <div>
+                        <h2 class="text-2xl font-cormorant text-stone-900">Rezervace termínu</h2>
+                        <div class="flex gap-2 mt-2">
+                            <div class="h-1 w-12 bg-stone-900 rounded-full transition-all duration-300"
+                                id="step-indicator-1"></div>
+                            <div class="h-1 w-12 bg-stone-200 rounded-full transition-all duration-300"
+                                id="step-indicator-2"></div>
+                            <div class="h-1 w-12 bg-stone-200 rounded-full transition-all duration-300"
+                                id="step-indicator-3"></div>
+                            <div class="h-1 w-12 bg-stone-200 rounded-full transition-all duration-300"
+                                id="step-indicator-4"></div>
+                        </div>
+                    </div>
+                    <button onclick="closeBookingModal()"
+                        class="p-2 text-stone-400 hover:text-stone-900 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-x">
+                            <path d="M18 6 6 18" />
+                            <path d="m6 6 12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Body (Scrollable) -->
+                <div class="flex-1 overflow-y-auto p-8 lg:p-12">
+
+                    <!-- Step 1: Service Selection -->
+                    <div id="booking-step-1" class="space-y-8">
+                        <h3 class="text-xl font-geist font-medium text-stone-900 mb-6">Vyberte službu</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <button onclick="selectService('Endosphere Therapy - Tělo', '2 200 Kč')"
+                                class="text-left p-6 border border-stone-200 hover:border-stone-900 hover:bg-stone-50 transition-all group">
+                                <span class="block font-cormorant text-2xl mb-2 text-stone-900">Endosphere
+                                    Therapy</span>
+                                <span class="block font-geist text-sm text-stone-500 mb-4">Tělo / Obličej</span>
+                                <span
+                                    class="block font-geist text-xs uppercase tracking-widest text-stone-400 group-hover:text-stone-900">Vybrat</span>
+                            </button>
+                            <button onclick="selectService('HIFU Lifting', '8 500 Kč')"
+                                class="text-left p-6 border border-stone-200 hover:border-stone-900 hover:bg-stone-50 transition-all group">
+                                <span class="block font-cormorant text-2xl mb-2 text-stone-900">HIFU Lifting</span>
+                                <span class="block font-geist text-sm text-stone-500 mb-4">Celý obličej /
+                                    Parciální</span>
+                                <span
+                                    class="block font-geist text-xs uppercase tracking-widest text-stone-400 group-hover:text-stone-900">Vybrat</span>
+                            </button>
+                            <button onclick="selectService('Vlasová péče', 'Individuálně')"
+                                class="text-left p-6 border border-stone-200 hover:border-stone-900 hover:bg-stone-50 transition-all group">
+                                <span class="block font-cormorant text-2xl mb-2 text-stone-900">Vlasová péče</span>
+                                <span class="block font-geist text-sm text-stone-500 mb-4">Mezoterapie /
+                                    Prodlužování</span>
+                                <span
+                                    class="block font-geist text-xs uppercase tracking-widest text-stone-400 group-hover:text-stone-900">Vybrat</span>
+                            </button>
+                            <button onclick="selectService('Konzultace', '500 Kč')"
+                                class="text-left p-6 border border-stone-200 hover:border-stone-900 hover:bg-stone-50 transition-all group">
+                                <span class="block font-cormorant text-2xl mb-2 text-stone-900">Konzultace</span>
+                                <span class="block font-geist text-sm text-stone-500 mb-4">Diagnostika a plán</span>
+                                <span
+                                    class="block font-geist text-xs uppercase tracking-widest text-stone-400 group-hover:text-stone-900">Vybrat</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Date & Time -->
+                    <div id="booking-step-2" class="hidden space-y-8">
+                        <h3 class="text-xl font-geist font-medium text-stone-900 mb-6">Vyberte termín</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <label
+                                    class="block text-xs uppercase tracking-widest text-stone-500 mb-3 font-geist">Datum</label>
+                                <input type="date"
+                                    class="w-full p-4 border border-stone-200 font-geist focus:outline-none focus:border-stone-900 transition-colors"
+                                    id="bookingDate">
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-xs uppercase tracking-widest text-stone-500 mb-3 font-geist">Čas</label>
+                                <div class="grid grid-cols-3 gap-2">
+                                    <button onclick="selectTime(this, '09:00')"
+                                        class="time-slot p-2 border border-stone-200 text-sm font-geist hover:border-stone-900 hover:bg-stone-50 transition-all">09:00</button>
+                                    <button onclick="selectTime(this, '10:30')"
+                                        class="time-slot p-2 border border-stone-200 text-sm font-geist hover:border-stone-900 hover:bg-stone-50 transition-all">10:30</button>
+                                    <button onclick="selectTime(this, '12:00')"
+                                        class="time-slot p-2 border border-stone-200 text-sm font-geist hover:border-stone-900 hover:bg-stone-50 transition-all">12:00</button>
+                                    <button onclick="selectTime(this, '13:30')"
+                                        class="time-slot p-2 border border-stone-200 text-sm font-geist hover:border-stone-900 hover:bg-stone-50 transition-all">13:30</button>
+                                    <button onclick="selectTime(this, '15:00')"
+                                        class="time-slot p-2 border border-stone-200 text-sm font-geist hover:border-stone-900 hover:bg-stone-50 transition-all">15:00</button>
+                                    <button onclick="selectTime(this, '16:30')"
+                                        class="time-slot p-2 border border-stone-200 text-sm font-geist hover:border-stone-900 hover:bg-stone-50 transition-all">16:30</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Contact -->
+                    <div id="booking-step-3" class="hidden space-y-8">
+                        <h3 class="text-xl font-geist font-medium text-stone-900 mb-6">Kontaktní údaje</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label
+                                    class="block text-xs uppercase tracking-widest text-stone-500 mb-2 font-geist">Jméno
+                                    a Příjmení</label>
+                                <input type="text" id="bookingName"
+                                    class="w-full p-3 border border-stone-200 font-geist focus:outline-none focus:border-stone-900 transition-colors"
+                                    placeholder="Jana Nováková">
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label
+                                        class="block text-xs uppercase tracking-widest text-stone-500 mb-2 font-geist">Email</label>
+                                    <input type="email" id="bookingEmail"
+                                        class="w-full p-3 border border-stone-200 font-geist focus:outline-none focus:border-stone-900 transition-colors"
+                                        placeholder="jana@example.com">
+                                </div>
+                                <div>
+                                    <label
+                                        class="block text-xs uppercase tracking-widest text-stone-500 mb-2 font-geist">Telefon</label>
+                                    <input type="tel" id="bookingPhone"
+                                        class="w-full p-3 border border-stone-200 font-geist focus:outline-none focus:border-stone-900 transition-colors"
+                                        placeholder="+420 777 123 456">
+                                </div>
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-xs uppercase tracking-widest text-stone-500 mb-2 font-geist">Poznámka
+                                    (volitelné)</label>
+                                <textarea id="bookingNote" rows="3"
+                                    class="w-full p-3 border border-stone-200 font-geist focus:outline-none focus:border-stone-900 transition-colors"
+                                    placeholder=""></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Summary -->
+                    <div id="booking-step-4" class="hidden space-y-8">
+                        <div class="bg-stone-50 p-8 text-center">
+                            <div
+                                class="w-16 h-16 bg-stone-200 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-check text-stone-900">
+                                    <path d="M20 6 9 17l-5-5" />
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-cormorant text-stone-900 mb-2">Rezervace odeslána</h3>
+                            <p class="text-stone-500 font-geist">Děkujeme, Jano. Potvrzení vám přijde na email.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Footer -->
+                <div class="p-8 border-t border-stone-100 bg-white flex justify-between items-center z-10">
+                    <button onclick="prevStep()" id="prevBtn"
+                        class="text-stone-400 hover:text-stone-900 font-geist uppercase text-xs tracking-widest hidden">
+                        Zpět
+                    </button>
+                    <button onclick="nextStep()" id="nextBtn"
+                        class="bg-stone-900 text-white px-8 py-3 hover:bg-stone-800 transition-all text-sm uppercase tracking-widest font-geist">
+                        Pokračovat
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRICE LIST MODAL -->
+    <div id="priceListModal" class="fixed inset-0 z-[70] hidden">
+        <!-- Backdrop -->
+        <div class="absolute inset-0 bg-stone-900/60 backdrop-blur-sm transition-opacity" onclick="closePriceList()">
+        </div>
+
+        <!-- Modal Content -->
+        <div class="absolute inset-0 flex items-center justify-center p-0 md:p-4">
+            <div
+                class="bg-white w-full h-full md:h-auto md:max-h-[85vh] md:max-w-3xl overflow-hidden shadow-2xl flex flex-col relative animate-fade-in-up md:rounded-lg">
+
+                <!-- Header -->
+                <div
+                    class="px-6 md:px-8 py-4 md:py-6 border-b border-stone-100 flex justify-between items-center bg-white z-10 sticky top-0">
+                    <h2 class="text-2xl md:text-3xl font-cormorant text-stone-900">Ceník služeb</h2>
+                    <button onclick="closePriceList()"
+                        class="p-2 text-stone-400 hover:text-stone-900 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-x">
+                            <path d="M18 6 6 18" />
+                            <path d="m6 6 12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Body (Scrollable) -->
+                <div class="flex-1 overflow-y-auto p-6 md:p-8 lg:p-12 space-y-10 md:space-y-12 pb-24 md:pb-12">
+
+                    <!-- Category: Endosphere -->
+                    <div>
+                        <h3 class="font-cormorant text-2xl text-stone-900 mb-6 border-b border-stone-100 pb-2">
+                            Endosphere Therapy
+                        </h3>
+                        <div class="space-y-6 md:space-y-4">
+                            <div class="flex justify-between items-baseline group">
+                                <span
+                                    class="font-geist text-stone-600 group-hover:text-stone-900 transition-colors text-sm md:text-base">Tělo
+                                    - 1 ošetření (60 min)</span>
+                                <span class="font-geist font-medium text-stone-900 text-sm md:text-base">2 200 Kč</span>
+                            </div>
+                            <div class="flex justify-between items-baseline group">
+                                <span
+                                    class="font-geist text-stone-600 group-hover:text-stone-900 transition-colors text-sm md:text-base">Tělo
+                                    - Balíček 6 ošetření</span>
+                                <span class="font-geist font-medium text-stone-900 text-sm md:text-base">11 000
+                                    Kč</span>
+                            </div>
+                            <div class="flex justify-between items-baseline group">
+                                <span
+                                    class="font-geist text-stone-600 group-hover:text-stone-900 transition-colors text-sm md:text-base">Tělo
+                                    - Balíček 12 ošetření</span>
+                                <span class="font-geist font-medium text-stone-900 text-sm md:text-base">20 000
+                                    Kč</span>
+                            </div>
+                            <div class="flex justify-between items-baseline group pt-2">
+                                <span
+                                    class="font-geist text-stone-600 group-hover:text-stone-900 transition-colors text-sm md:text-base">Obličej
+                                    - 1 ošetření (45 min)</span>
+                                <span class="font-geist font-medium text-stone-900 text-sm md:text-base">1 800 Kč</span>
+                            </div>
+                            <div class="flex justify-between items-baseline group">
+                                <span
+                                    class="font-geist text-stone-600 group-hover:text-stone-900 transition-colors text-sm md:text-base">Obličej
+                                    - Balíček 6 ošetření</span>
+                                <span class="font-geist font-medium text-stone-900 text-sm md:text-base">9 000 Kč</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: HIFU -->
+                    <div>
+                        <h3 class="font-cormorant text-2xl text-stone-900 mb-6 border-b border-stone-100 pb-2">
+                            HIFU Lifting
+                        </h3>
+                        <div class="space-y-6 md:space-y-4">
+                            <div class="flex justify-between items-baseline group">
+                                <span
+                                    class="font-geist text-stone-600 group-hover:text-stone-900 transition-colors text-sm md:text-base">Celý
+                                    obličej (Full Face)</span>
+                                <span class="font-geist font-medium text-stone-900 text-sm md:text-base">8 500 Kč</span>
+                            </div>
+                            <div class="flex justify-between items-baseline group">
+                                <span
+                                    class="font-geist text-stone-600 group-hover:text-stone-900 transition-colors text-sm md:text-base">Oblast
+                                    očí a čela</span>
+                                <span class="font-geist font-medium text-stone-900 text-sm md:text-base">4 500 Kč</span>
+                            </div>
+                            <div class="flex justify-between items-baseline group">
+                                <span
+                                    class="font-geist text-stone-600 group-hover:text-stone-900 transition-colors text-sm md:text-base">Podbradek
+                                    a krk</span>
+                                <span class="font-geist font-medium text-stone-900 text-sm md:text-base">4 500 Kč</span>
+                            </div>
+                            <div class="flex justify-between items-baseline group">
+                                <span
+                                    class="font-geist text-stone-600 group-hover:text-stone-900 transition-colors text-sm md:text-base">Dekolt</span>
+                                <span class="font-geist font-medium text-stone-900 text-sm md:text-base">5 500 Kč</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: Hair -->
+                    <div>
+                        <h3 class="font-cormorant text-2xl text-stone-900 mb-6 border-b border-stone-100 pb-2">
+                            Vlasová péče
+                        </h3>
+                        <div class="space-y-6 md:space-y-4">
+                            <div class="flex justify-between items-baseline group">
+                                <span
+                                    class="font-geist text-stone-600 group-hover:text-stone-900 transition-colors text-sm md:text-base">Vlasová
+                                    mezoterapie</span>
+                                <span class="font-geist font-medium text-stone-900 text-sm md:text-base">2 500 Kč</span>
+                            </div>
+                            <div class="flex justify-between items-baseline group">
+                                <span
+                                    class="font-geist text-stone-600 group-hover:text-stone-900 transition-colors text-sm md:text-base">Prodlužování
+                                    vlasů (Konzultace)</span>
+                                <span class="font-geist font-medium text-stone-900 text-sm md:text-base">Zdarma</span>
+                            </div>
+                            <div class="flex justify-between items-baseline group">
+                                <span
+                                    class="font-geist text-stone-600 group-hover:text-stone-900 transition-colors text-sm md:text-base">Aplikace
+                                    Nano-Ring (1 pramen)</span>
+                                <span class="font-geist font-medium text-stone-900 text-sm md:text-base">od 80 Kč</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category: Other -->
+                    <div>
+                        <h3 class="font-cormorant text-2xl text-stone-900 mb-6 border-b border-stone-100 pb-2">
+                            Ostatní
+                        </h3>
+                        <div class="space-y-6 md:space-y-4">
+                            <div class="flex justify-between items-baseline group">
+                                <span
+                                    class="font-geist text-stone-600 group-hover:text-stone-900 transition-colors text-sm md:text-base">Konzultace
+                                    (30 min)</span>
+                                <span class="font-geist font-medium text-stone-900 text-sm md:text-base">500 Kč</span>
+                            </div>
+                            <div class="flex justify-between items-baseline group">
+                                <span
+                                    class="font-geist text-stone-600 group-hover:text-stone-900 transition-colors text-sm md:text-base">Dárkový
+                                    poukaz</span>
+                                <span class="font-geist font-medium text-stone-900 text-sm md:text-base">Volitelná
+                                    částka</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Footer CTA -->
+                <div
+                    class="p-6 border-t border-stone-100 bg-stone-50 flex justify-center items-center z-10 sticky bottom-0 md:relative">
+                    <p class="text-stone-500 font-geist text-sm mr-4 hidden md:block">Máte vybráno?</p>
+                    <button onclick="closePriceList(); openBookingModal()"
+                        class="text-stone-900 border-b border-stone-900 pb-0.5 hover:text-stone-600 hover:border-stone-600 transition-colors font-geist text-sm uppercase tracking-widest">
+                        Rezervovat termín
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Price List Modal Logic
+        const priceListModal = document.getElementById('priceListModal');
+
+        function openPriceList() {
+            priceListModal.classList.remove('hidden');
+            body.style.overflow = 'hidden';
+        }
+
+        function closePriceList() {
+            priceListModal.classList.add('hidden');
+            body.style.overflow = 'auto';
+        }
+
+        // Booking Modal Logic
+        const bookingModal = document.getElementById('bookingModal');
+        let currentStep = 1;
+        const totalSteps = 4;
+
+        function openBookingModal() {
+            bookingModal.classList.remove('hidden');
+            body.style.overflow = 'hidden';
+            resetBooking();
+        }
+
+        function closeBookingModal() {
+            bookingModal.classList.add('hidden');
+            body.style.overflow = 'auto';
+        }
+
+        function resetBooking() {
+            currentStep = 1;
+            updateSteps();
+        }
+
+        function nextStep() {
+            if (currentStep < totalSteps) {
+                currentStep++;
+                updateSteps();
+            }
+        }
+
+        function prevStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                updateSteps();
+            }
+        }
+
+        function updateSteps() {
+            // Hide all steps
+            for (let i = 1; i <= totalSteps; i++) {
+                document.getElementById(`booking-step-${i}`).classList.add('hidden');
+
+                // Update indicators
+                const indicator = document.getElementById(`step-indicator-${i}`);
+                if (i <= currentStep) {
+                    indicator.classList.remove('bg-stone-200');
+                    indicator.classList.add('bg-stone-900');
+                } else {
+                    indicator.classList.remove('bg-stone-900');
+                    indicator.classList.add('bg-stone-200');
+                }
+            }
+
+            // Show current step
+            document.getElementById(`booking-step-${currentStep}`).classList.remove('hidden');
+
+            // Button visibility
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            if (currentStep === 1) {
+                prevBtn.classList.add('hidden');
+            } else {
+                prevBtn.classList.remove('hidden');
+            }
+
+            if (currentStep === totalSteps) {
+                prevBtn.classList.add('hidden');
+                nextBtn.classList.add('hidden');
+            } else {
+                nextBtn.classList.remove('hidden');
+                if (currentStep === 3) {
+                    nextBtn.textContent = "Dokončit rezervaci";
+                } else {
+                    nextBtn.textContent = "Pokračovat";
+                }
+            }
+        }
+
+        // Selection Logic
+        function selectService(name, price) {
+            // Visual feedback could be added here
+            nextStep();
+        }
+
+        function selectTime(btn, time) {
+            // Remove active class from all
+            document.querySelectorAll('.time-slot').forEach(el => {
+                el.classList.remove('bg-stone-900', 'text-white');
+                el.classList.add('hover:bg-stone-50');
+            });
+
+            // Add active class
+            btn.classList.remove('hover:bg-stone-50');
+            btn.classList.add('bg-stone-900', 'text-white');
+        }
+    </script>
+
+    <!-- Data Loading Script -->
+    <script src="app.js"></script>
+</body>
+
+</html>
