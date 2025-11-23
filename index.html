@@ -522,63 +522,47 @@
         </div>
     </section>
 
-    <!-- Gift Cards Section -->
-    <section id="poukazy" class="py-24 md:py-32 bg-white">
-        <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
-            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+    <!-- Gift Cards Section - Sticky Scroll -->
+    <section id="poukazy" class="relative bg-white">
+        <div class="flex flex-col lg:flex-row min-h-screen">
 
-                <!-- Left: Image -->
-                <div class="w-full lg:w-1/2 order-2 lg:order-1">
-                    <div class="relative aspect-[4/3] overflow-hidden shadow-2xl">
+            <!-- Left Side: Sticky Image -->
+            <div class="hidden lg:flex w-1/2 h-screen sticky top-0 left-0 items-center justify-center bg-stone-50">
+                <div class="relative w-[500px] aspect-[4/3] overflow-hidden shadow-2xl">
+                    <img src="https://omf77i7evqckneoq.public.blob.vercel-storage.com/gift-card-main-VclQf9J2kWgWa8o8t3F6V8YlsTRA2O.webp"
+                        alt="SW Beauty dárkový poukaz" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-stone-900/5 to-transparent"></div>
+                </div>
+            </div>
+
+            <!-- Right Side: Content -->
+            <div
+                class="w-full lg:w-1/2 py-32 px-6 md:px-12 lg:pl-16 xl:pl-24 flex flex-col justify-center z-10 bg-white">
+
+                <!-- Mobile Image -->
+                <div class="lg:hidden mb-12 -mx-6 md:-mx-12">
+                    <div class="relative aspect-[4/3] overflow-hidden">
                         <img src="https://omf77i7evqckneoq.public.blob.vercel-storage.com/gift-card-main-VclQf9J2kWgWa8o8t3F6V8YlsTRA2O.webp"
                             alt="SW Beauty dárkový poukaz" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-tr from-stone-900/10 to-transparent"></div>
                     </div>
                 </div>
 
-                <!-- Right: Content -->
-                <div class="w-full lg:w-1/2 order-1 lg:order-2">
-                    <span class="text-stone-400 uppercase tracking-widest text-xs mb-4 block font-geist">
+                <div class="max-w-lg">
+                    <span class="text-stone-400 uppercase tracking-widest text-xs mb-6 block font-geist">
                         Dárkové poukazy
                     </span>
+
                     <h2
-                        class="text-4xl md:text-5xl lg:text-6xl tracking-tight mb-6 font-medium font-cormorant leading-tight">
-                        Darujte krásu a sebevědomí
+                        class="text-5xl md:text-6xl lg:text-7xl font-medium font-cormorant text-stone-900 mb-8 tracking-tight leading-[1.1]">
+                        Darujte krásu
                     </h2>
-                    <p class="text-stone-600 text-lg font-light mb-8 leading-relaxed font-geist max-w-lg">
-                        Nejkrásnějším dárkem je čas a péče. Vytvořte osobní dárkový poukaz během okamžiku
-                        a dopřejte svým blízkým chvíle relaxace a luxusní péče.
+
+                    <p class="text-stone-600 text-xl font-light mb-12 leading-relaxed font-geist">
+                        Nejkrásnějším dárkem je čas a péče.
                     </p>
 
-                    <div class="space-y-4 mb-10">
-                        <div class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-stone-900 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            <span class="text-stone-600 font-geist">Libovolná hodnota nebo konkrétní služba</span>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-stone-900 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            <span class="text-stone-600 font-geist">Okamžité vystavení a zaslání na email</span>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <svg class="w-5 h-5 text-stone-900 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M5 13l4 4L19 7"></path>
-                            </svg>
-                            <span class="text-stone-600 font-geist">Platnost 12 měsíců</span>
-                        </div>
-                    </div>
-
                     <button onclick="openModal()"
-                        class="inline-flex items-center gap-3 bg-stone-900 text-white px-8 py-4 hover:bg-stone-800 transition-all duration-300 tracking-widest text-sm uppercase font-geist font-medium shadow-lg hover:shadow-xl">
+                        class="inline-flex items-center gap-3 bg-stone-900 text-white px-8 py-4 hover:bg-stone-800 transition-all duration-300 tracking-widest text-sm uppercase font-geist font-medium">
                         <span>Vytvořit poukaz</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -588,8 +572,8 @@
                         </svg>
                     </button>
                 </div>
-
             </div>
+
         </div>
     </section>
 
