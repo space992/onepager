@@ -387,7 +387,7 @@ function renderServices() {
         const imageId = `img-${service.service_id}`;
         return `
             <div class="service-item group cursor-pointer" 
-                 onmouseenter="changeServiceImage('${imageId}')"
+                 data-image-id="${imageId}"
                  onclick="openServiceDetail('${service.service_id}')">
                 <h3 class="text-5xl md:text-6xl lg:text-7xl font-medium font-cormorant text-stone-200 group-hover:text-stone-900 transition-colors duration-500">
                     ${service.category_name}
@@ -407,11 +407,14 @@ function renderServices() {
             return `
                 <img id="${imageId}"
                      src="${getImageUrl(firstImage)}"
-                     class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${index === 0 ? 'opacity-100' : 'opacity-0'}"
+                     class="absolute inset-0 w-full h-full object-contain transition-opacity duration-700 ${index === 0 ? 'opacity-100' : 'opacity-0'}"
                      alt="${service.category_name}">
             `;
         }).join('') + `<div class="absolute inset-0 bg-stone-900/5 pointer-events-none"></div>`;
     }
+
+    // Setup scroll-based image switching
+    setupScrollImageSwitch();
 }
 
 
@@ -425,7 +428,7 @@ function renderPriceList() {
 
     // Create filter buttons
     const filterHTML = `
-        <div class="sticky top-0 bg-white z-20 pb-4 mb-6 border-b border-stone-100">
+        <div class="sticky top-0 bg-white/95 backdrop-blur-sm z-20 pt-6 pb-4 mb-6 border-b border-stone-200 shadow-sm">
             <div class="flex flex-wrap gap-2">
                 <button onclick="filterPriceList('all')" 
                         data-filter="all"
