@@ -707,48 +707,48 @@
 
                 <!-- Left Side: Visual Preview -->
                 <div
-                    class="w-full lg:w-5/12 bg-stone-100 p-8 lg:p-12 flex flex-col justify-center items-center sticky top-0">
-                    <h3 class="text-stone-500 uppercase tracking-widest text-xs mb-8 font-geist">
+                    class="w-full lg:w-5/12 bg-stone-100 p-6 lg:p-10 flex flex-col justify-center items-center sticky top-0">
+                    <h3 class="text-stone-500 uppercase tracking-widest text-xs mb-6 font-geist">
                         Náhled poukazu
                     </h3>
 
-                    <!-- The Card Visual -->
+                    <!-- The Card Visual - Větší a lépe viditelná -->
                     <div id="cardPreview"
-                        class="w-full aspect-[1.6/1] bg-white shadow-xl p-6 md:p-8 flex flex-col justify-between border border-stone-200 relative overflow-hidden">
+                        class="w-full max-w-md aspect-[1.6/1] bg-white shadow-2xl p-6 md:p-10 flex flex-col justify-between border border-stone-200 relative overflow-hidden">
                         <!-- Subtle Background Pattern -->
                         <div
-                            class="absolute top-0 right-0 w-24 h-24 bg-[#F5F2EA] rounded-bl-full opacity-50 -mr-4 -mt-4">
+                            class="absolute top-0 right-0 w-32 h-32 bg-[#F5F2EA] rounded-bl-full opacity-50 -mr-8 -mt-8">
                         </div>
 
                         <div class="flex justify-between items-start z-10">
-                            <span class="text-xl md:text-2xl tracking-tight text-stone-900 font-medium font-sans">
+                            <span class="text-2xl md:text-3xl tracking-tight text-stone-900 font-medium font-sans">
                                 SW Beauty.
                             </span>
                         </div>
 
-                        <div class="text-center z-10 my-4">
-                            <span class="block text-stone-400 text-xs uppercase tracking-wider mb-2 font-geist">
+                        <div class="text-center z-10 my-auto">
+                            <span class="block text-stone-400 text-xs uppercase tracking-wider mb-3 font-geist">
                                 Věnováno
                             </span>
                             <span id="previewName"
-                                class="text-2xl md:text-3xl text-stone-800 break-words font-medium font-cormorant">
+                                class="text-3xl md:text-4xl text-stone-800 break-words font-medium font-cormorant block">
                                 Vaše Jméno
                             </span>
                             <p id="previewNote"
-                                class="text-xs text-stone-500 mt-2 italic font-light max-w-[80%] mx-auto line-clamp-2">
+                                class="text-sm text-stone-500 mt-3 italic font-light max-w-[85%] mx-auto line-clamp-2">
                             </p>
                         </div>
 
                         <div class="flex justify-between items-end border-t border-stone-100 pt-4 z-10">
-                            <span class="text-[10px] md:text-xs text-stone-400 uppercase tracking-widest font-geist">
+                            <span class="text-xs text-stone-400 uppercase tracking-widest font-geist">
                                 Dárkový poukaz
                             </span>
-                            <span id="previewValue" class="font-medium text-lg md:text-xl text-stone-900 font-geist">
+                            <span id="previewValue" class="font-medium text-2xl md:text-3xl text-stone-900 font-geist">
                                 2 000 Kč
                             </span>
                         </div>
                     </div>
-                    <p class="text-xs text-stone-400 mt-6 text-center font-light font-geist">
+                    <p class="text-xs text-stone-400 mt-6 text-center font-light font-geist max-w-xs">
                         Vizuál poukazu je ilustrační. Finální verze vám přijde e-mailem.
                     </p>
                 </div>
@@ -894,6 +894,13 @@
                                 Platba probíhá převodem nebo na místě. Po odeslání vás budeme
                                 kontaktovat.
                             </p>
+
+                            <!-- Podmínky Link -->
+                            <button type="button"
+                                onclick="alert('Platnost poukazu: 12 měsíců od zakoupení\nPoukaz nelze vyměnit za hotovost\nPoukaz je přenosný na jinou osobu\nVyužitelný na všechny procedury v ceníku')"
+                                class="w-full mt-4 text-xs text-stone-500 hover:text-stone-900 transition-colors py-2 px-4 border border-stone-200 hover:border-stone-300 font-geist uppercase tracking-widest">
+                                Podmínky a platnost
+                            </button>
                         </div>
                     </form>
                 </div>
