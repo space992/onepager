@@ -1,5 +1,14 @@
 {
+  "name": "sw-beauty",
+  "version": "1.0.0",
+  "description": "SW Beauty - Luxusní kosmetický salon | One-page website s booking systémem",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod",
+    "serve": "npx serve ."
+  },
   "dependencies": {
-    "@vercel/blob": "^2.0.0"
+    "@vercel/blob": "^2.0.0",
+    "resend": "^6.5.2"
   }
 }

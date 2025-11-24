@@ -164,8 +164,9 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="fixed w-full top-0 left-0 z-40 bg-transparent border-b border-transparent" id="navbar">
-        <div class="max-w-screen-2xl mx-auto flex items-center justify-between px-6 py-5 md:px-12" id="navbarContainer">
+    <nav class="fixed w-full top-0 left-0 z-40 bg-transparent border-b border-transparent transition-transform duration-300"
+        id="navbar">
+        <div class="max-w-screen-2xl mx-auto flex items-center justify-between px-6 md:px-12 py-5" id="navbarContainer">
             <a href="#" id="navbarLogo"
                 class="text-5xl text-stone-900 tracking-tight font-medium font-cormorant relative z-50 origin-left">
                 SW Beauty.
@@ -199,36 +200,38 @@
 
     <!-- Hero Section -->
     <header class="relative w-full min-h-screen flex flex-col lg:flex-row pt-24 lg:pt-0 lg:items-center">
-        <!-- Text Content -->
-        <div
-            class="w-full lg:w-5/12 flex flex-col justify-center px-6 pt-12 pb-12 md:px-12 lg:pl-24 xl:pl-32 lg:py-0 order-2 lg:order-1">
-
-            <h1
-                class="text-5xl md:text-6xl xl:text-7xl leading-[1.1] font-medium text-stone-900 tracking-tighter font-cormorant mb-8">
-                Místo, kde se vnější krása spojí s vnitřní.
-            </h1>
-
-            <div class="flex flex-col sm:flex-row gap-4">
-                <button onclick="openBookingModal()"
-                    class="min-w-[180px] text-center bg-stone-900 text-white px-8 py-4 hover:bg-stone-800 transition-colors duration-300 font-geist text-sm tracking-widest uppercase">Rezervovat
-                    termín</button>
-                <a href="#sluzby"
-                    class="min-w-[180px] text-center border border-stone-300 text-stone-900 px-8 py-4 hover:border-stone-900 transition-colors duration-300 font-geist text-sm tracking-widest uppercase">Prohlédnout
-                    služby</a>
-            </div>
-        </div>
-
-        <!-- Image Content -->
-        <div
-            class="w-full lg:w-7/12 h-[60vh] lg:h-auto relative order-1 lg:order-2 lg:py-12 lg:pr-12 flex items-center justify-center">
+        <div class="max-w-screen-2xl mx-auto w-full flex flex-col lg:flex-row lg:items-center">
+            <!-- Text Content -->
             <div
-                class="absolute inset-0 lg:relative lg:inset-auto lg:h-[80vh] lg:w-auto lg:aspect-[3/4] lg:shadow-2xl overflow-hidden">
-                <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/ff9ee43a-d206-44ef-851c-c74c3c8ed87b_3840w.jpg"
-                    alt="SW Beauty Editorial Portrait"
-                    class="w-full h-full object-cover object-center opacity-90 animate-fade-in-up">
+                class="w-full lg:w-5/12 flex flex-col justify-center px-6 pt-12 pb-12 md:px-12 lg:pl-24 xl:pl-32 lg:py-0 order-2 lg:order-1">
+
+                <h1
+                    class="text-5xl md:text-6xl xl:text-7xl leading-[1.1] font-medium text-stone-900 tracking-tighter font-cormorant mb-8">
+                    Místo, kde se vnější krása spojí s vnitřní.
+                </h1>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button onclick="openBookingModal()"
+                        class="min-w-[180px] text-center bg-stone-900 text-white px-8 py-4 hover:bg-stone-800 transition-colors duration-300 font-geist text-sm tracking-widest uppercase">Rezervovat
+                        termín</button>
+                    <a href="#sluzby"
+                        class="min-w-[180px] text-center border border-stone-300 text-stone-900 px-8 py-4 hover:border-stone-900 transition-colors duration-300 font-geist text-sm tracking-widest uppercase">Prohlédnout
+                        služby</a>
+                </div>
             </div>
+
+            <!-- Image Content -->
             <div
-                class="absolute top-0 right-0 bottom-0 left-0 bg-gradient-to-l from-transparent to-cream-50/20 lg:hidden">
+                class="w-full lg:w-7/12 h-[60vh] lg:h-auto relative order-1 lg:order-2 lg:py-12 lg:pr-12 flex items-center justify-center">
+                <div
+                    class="absolute inset-0 lg:relative lg:inset-auto lg:h-[80vh] lg:w-auto lg:aspect-[3/4] lg:shadow-2xl overflow-hidden">
+                    <img src="https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/ff9ee43a-d206-44ef-851c-c74c3c8ed87b_3840w.jpg"
+                        alt="SW Beauty Editorial Portrait"
+                        class="w-full h-full object-cover object-center opacity-90 animate-fade-in-up">
+                </div>
+                <div
+                    class="absolute top-0 right-0 bottom-0 left-0 bg-gradient-to-l from-transparent to-cream-50/20 lg:hidden">
+                </div>
             </div>
         </div>
     </header>
@@ -619,9 +622,9 @@
     </section>
 
     <!-- Footer -->
-    <footer class="md:px-12 overflow-hidden text-stone-900 border-stone-100 border-t pt-24 pb-6 relative">
-        <div class="max-w-screen-2xl mx-auto relative z-10">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-24 md:mb-48 px-6 md:px-0">
+    <footer class="overflow-hidden text-stone-900 border-stone-100 border-t pt-24 pb-6 relative">
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-12 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-24 md:mb-48">
 
                 <!-- Služby Column -->
                 <div class="md:col-span-1">
@@ -667,7 +670,7 @@
 
             <!-- Bottom Section with Giant Editorial Text & Copyright -->
             <div
-                class="flex flex-col md:flex-row items-end justify-between border-t border-stone-200 pt-8 md:pt-0 md:border-none px-6 md:px-0">
+                class="flex flex-col md:flex-row items-end justify-between border-t border-stone-200 pt-8 md:pt-0 md:border-none">
                 <!-- Copyright -->
                 <div class="order-2 md:order-1 mt-12 md:mt-0 self-start md:self-end">
                     <p class="text-xs text-stone-400 font-geist tracking-widest uppercase">© 2024 SW Beauty. Všechna
@@ -714,36 +717,47 @@
 
                     <!-- The Card Visual - Větší a lépe viditelná -->
                     <div id="cardPreview"
-                        class="w-full max-w-md aspect-[1.6/1] bg-white shadow-2xl p-6 md:p-10 flex flex-col justify-between border border-stone-200 relative overflow-hidden">
-                        <!-- Subtle Background Pattern -->
+                        class="w-full max-w-md aspect-[1.6/1] bg-white shadow-xl p-8 md:p-12 flex flex-col justify-between border-2 border-stone-200 relative overflow-hidden">
+
+                        <!-- Elegant corner accent -->
+                        <div class="absolute top-0 left-0 w-24 h-24 border-t-2 border-l-2 border-stone-300 opacity-30">
+                        </div>
                         <div
-                            class="absolute top-0 right-0 w-32 h-32 bg-[#F5F2EA] rounded-bl-full opacity-50 -mr-8 -mt-8">
+                            class="absolute bottom-0 right-0 w-24 h-24 border-b-2 border-r-2 border-stone-300 opacity-30">
                         </div>
 
-                        <div class="flex justify-between items-start z-10">
-                            <span class="text-2xl md:text-3xl tracking-tight text-stone-900 font-medium font-sans">
-                                SW Beauty.
-                            </span>
+                        <!-- Top section - Logo -->
+                        <div class="flex justify-center items-start z-10">
+                            <div class="text-center">
+                                <span
+                                    class="text-2xl md:text-3xl tracking-tight text-stone-900 font-medium font-cormorant block mb-1">
+                                    SW Beauty
+                                </span>
+                                <div class="w-16 h-px bg-stone-300 mx-auto"></div>
+                            </div>
                         </div>
 
-                        <div class="text-center z-10 my-auto">
-                            <span class="block text-stone-400 text-xs uppercase tracking-wider mb-3 font-geist">
+                        <!-- Center section - Recipient & Message -->
+                        <div class="text-center z-10 flex-1 flex flex-col justify-center py-6">
+                            <span class="block text-stone-400 text-[10px] uppercase tracking-[0.2em] mb-4 font-geist">
                                 Věnováno
                             </span>
                             <span id="previewName"
-                                class="text-3xl md:text-4xl text-stone-800 break-words font-medium font-cormorant block">
+                                class="text-4xl md:text-5xl text-stone-900 break-words font-cormorant block mb-6 leading-tight">
                                 Vaše Jméno
                             </span>
                             <p id="previewNote"
-                                class="text-sm text-stone-500 mt-3 italic font-light max-w-[85%] mx-auto line-clamp-2">
+                                class="text-sm text-stone-500 italic font-light max-w-[90%] mx-auto leading-relaxed min-h-[3rem]">
                             </p>
                         </div>
 
-                        <div class="flex justify-between items-end border-t border-stone-100 pt-4 z-10">
-                            <span class="text-xs text-stone-400 uppercase tracking-widest font-geist">
-                                Dárkový poukaz
+                        <!-- Bottom section - Amount -->
+                        <div class="flex flex-col items-center z-10 border-t border-stone-200 pt-6">
+                            <span class="text-[10px] text-stone-400 uppercase tracking-[0.2em] font-geist mb-3">
+                                Pro
                             </span>
-                            <span id="previewValue" class="font-medium text-2xl md:text-3xl text-stone-900 font-geist">
+                            <span id="previewValue"
+                                class="font-cormorant text-4xl md:text-5xl text-stone-900 text-center">
                                 2 000 Kč
                             </span>
                         </div>
@@ -846,7 +860,8 @@
                                 <label class="block text-xs uppercase tracking-widest text-stone-500 mb-2 font-geist">
                                     Jméno obdarovaného
                                 </label>
-                                <input type="text" placeholder="Např. Jana Nováková" oninput="updateName(this.value)"
+                                <input id="recipientName" type="text" placeholder="Např. Jana Nováková"
+                                    oninput="updateName(this.value)"
                                     class="w-full bg-stone-50 border border-stone-200 p-3 text-stone-800 text-sm focus:outline-none focus:border-stone-500 placeholder:text-stone-300"
                                     required="">
                             </div>
@@ -855,8 +870,8 @@
                                 <label class="block text-xs uppercase tracking-widest text-stone-500 mb-2 font-geist">
                                     Krátké věnování (volitelné)
                                 </label>
-                                <textarea rows="2" maxlength="60" placeholder="Všechno nejlepší k narozeninám..."
-                                    oninput="updateNote(this.value)"
+                                <textarea id="giftMessage" rows="2" maxlength="60"
+                                    placeholder="Všechno nejlepší k narozeninám..." oninput="updateNote(this.value)"
                                     class="w-full bg-stone-50 border border-stone-200 p-3 text-stone-800 text-sm focus:outline-none focus:border-stone-500 placeholder:text-stone-300 resize-none"></textarea>
                                 <p class="text-right text-[10px] text-stone-400 mt-1 font-geist">
                                     Max. 60 znaků
@@ -870,7 +885,7 @@
                                 <label class="block text-xs uppercase tracking-widest text-stone-500 mb-2 font-geist">
                                     Váš e-mail
                                 </label>
-                                <input type="email" placeholder="vas@email.cz"
+                                <input id="buyerEmail" type="email" placeholder="vas@email.cz"
                                     class="w-full bg-stone-50 border border-stone-200 p-3 text-stone-800 text-sm focus:outline-none focus:border-stone-500"
                                     required="">
                             </div>
@@ -878,7 +893,7 @@
                                 <label class="block text-xs uppercase tracking-widest text-stone-500 mb-2 font-geist">
                                     Váš telefon
                                 </label>
-                                <input type="tel" placeholder="+420..."
+                                <input id="buyerPhone" type="tel" placeholder="+420..."
                                     class="w-full bg-stone-50 border border-stone-200 p-3 text-stone-800 text-sm focus:outline-none focus:border-stone-500"
                                     required="">
                             </div>
@@ -926,34 +941,54 @@
             }
         }
 
-        // Sticky Navbar & Logo Effect (bez GSAP)
+        // Sticky Navbar & Logo Effect with Auto-hide
+        let lastScrollY = 0;
+        let ticking = false;
+
         window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            const navbarLogo = document.getElementById('navbarLogo');
-            const navbarContainer = document.getElementById('navbarContainer');
-            const scrollProgress = Math.min(window.scrollY / 150, 1);
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const navbar = document.getElementById('navbar');
+                    const navbarLogo = document.getElementById('navbarLogo');
+                    const navbarContainer = document.getElementById('navbarContainer');
+                    const scrollProgress = Math.min(window.scrollY / 150, 1);
+                    const currentScrollY = window.scrollY;
 
-            if (scrollProgress > 0.1) {
-                navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
-                navbar.style.backdropFilter = 'blur(12px)';
-                navbar.style.boxShadow = '0 1px 2px 0 rgba(0, 0, 0, 0.05)';
-                navbar.style.borderBottomColor = 'rgba(231, 229, 228, 1)';
+                    // Auto-hide on scroll down, show on scroll up
+                    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                        // Scrolling down & past threshold
+                        navbar.style.transform = 'translateY(-100%)';
+                    } else if (currentScrollY < lastScrollY) {
+                        // Scrolling up
+                        navbar.style.transform = 'translateY(0)';
+                    }
 
-                const scale = 1 - (scrollProgress * 0.5);
-                navbarLogo.style.transform = `scale(${scale})`;
+                    lastScrollY = currentScrollY;
 
-                navbarContainer.style.paddingTop = '0.75rem';
-                navbarContainer.style.paddingBottom = '0.75rem';
-            } else {
-                navbar.style.backgroundColor = 'transparent';
-                navbar.style.backdropFilter = 'none';
-                navbar.style.boxShadow = 'none';
-                navbar.style.borderBottomColor = 'transparent';
+                    if (scrollProgress > 0.1) {
+                        navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+                        navbar.style.backdropFilter = 'blur(12px)';
+                        navbar.style.boxShadow = '0 1px 2px 0 rgba(0, 0, 0, 0.05)';
 
-                navbarLogo.style.transform = 'scale(1)';
+                        const scale = 1 - (scrollProgress * 0.5);
+                        navbarLogo.style.transform = `scale(${scale})`;
 
-                navbarContainer.style.paddingTop = '1.25rem';
-                navbarContainer.style.paddingBottom = '1.25rem';
+                        navbarContainer.style.paddingTop = '0.75rem';
+                        navbarContainer.style.paddingBottom = '0.75rem';
+                    } else {
+                        navbar.style.backgroundColor = 'transparent';
+                        navbar.style.backdropFilter = 'none';
+                        navbar.style.boxShadow = 'none';
+
+                        navbarLogo.style.transform = 'scale(1)';
+
+                        navbarContainer.style.paddingTop = '1.25rem';
+                        navbarContainer.style.paddingBottom = '1.25rem';
+                    }
+
+                    ticking = false;
+                });
+                ticking = true;
             }
         });
 
@@ -1012,21 +1047,61 @@
             previewNote.textContent = val;
         }
 
-        function submitForm() {
+        async function submitForm() {
             const btn = document.querySelector('form button[type=submit]');
             const originalText = btn.textContent;
+
+            // Get form values
+            const voucherType = document.querySelector('input[name="type"]:checked').value;
+            const recipientName = document.getElementById('recipientName').value;
+            const message = document.getElementById('giftMessage').value;
+            const buyerEmail = document.getElementById('buyerEmail').value;
+            const buyerPhone = document.getElementById('buyerPhone').value;
+
+            let amount = '';
+            let service = '';
+
+            if (voucherType === 'cash') {
+                amount = document.querySelector('input[type="range"]').value;
+            } else {
+                service = document.querySelector('#serviceInput select').value;
+            }
 
             btn.textContent = "Odesílám...";
             btn.disabled = true;
             btn.classList.add('opacity-75');
 
-            setTimeout(() => {
-                alert('Děkujeme za objednávku! Brzy se vám ozveme s podklady k platbě.');
-                closeModal();
+            try {
+                const response = await fetch('/api/voucher-order', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        recipientName,
+                        recipientEmail: buyerEmail,
+                        message,
+                        voucherType,
+                        amount,
+                        service
+                    })
+                });
+
+                if (response.ok) {
+                    alert('Děkujeme za objednávku! Brzy se vám ozveme s podklady k platbě.');
+                    closeModal();
+                    document.querySelector('form').reset();
+                } else {
+                    alert('Něco se pokazilo. Zkuste to prosím znovu.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Spojení selhalo. Zkuste to prosím znovu.');
+            } finally {
                 btn.textContent = originalText;
                 btn.disabled = false;
                 btn.classList.remove('opacity-75');
-            }, 1500);
+            }
         }
     </script>
 
@@ -1311,10 +1386,75 @@
             updateSteps();
         }
 
-        function nextStep() {
+        async function nextStep() {
+            // If on step 3 (last interactive step), submit booking
+            if (currentStep === 3) {
+                await submitBooking();
+                return;
+            }
+
             if (currentStep < totalSteps) {
                 currentStep++;
                 updateSteps();
+            }
+        }
+
+        async function submitBooking() {
+            const nextBtn = document.getElementById('nextBtn');
+            const originalText = nextBtn.textContent;
+
+            // Get booking data
+            const service = window.selectedPackage?.serviceId
+                ? servicesData.find(s => s.service_id === window.selectedPackage.serviceId)?.category_name
+                : '';
+            const packageName = window.selectedPackage?.packageName || '';
+            const date = document.querySelector('input[type="date"]')?.value || '';
+            const time = document.querySelector('.time-slot.active')?.dataset.time || '';
+            const name = document.getElementById('bookingName')?.value || '';
+            const email = document.getElementById('bookingEmail')?.value || '';
+            const phone = document.getElementById('bookingPhone')?.value || '';
+            const note = document.getElementById('bookingNote')?.value || '';
+
+            // Validate
+            if (!service || !date || !time || !name || !email || !phone) {
+                alert('Vyplňte prosím všechna povinná pole.');
+                return;
+            }
+
+            nextBtn.disabled = true;
+            nextBtn.textContent = 'Odesílám...';
+
+            try {
+                const response = await fetch('/api/booking-request', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        service,
+                        packageName,
+                        date,
+                        time,
+                        name,
+                        email,
+                        phone,
+                        note
+                    })
+                });
+
+                if (response.ok) {
+                    // Move to success step
+                    currentStep = 4;
+                    updateSteps();
+                } else {
+                    alert('Něco se pokazilo. Zkuste to prosím znovu.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Spojení selhalo. Zkuste to prosím znovu.');
+            } finally {
+                nextBtn.disabled = false;
+                nextBtn.textContent = originalText;
             }
         }
 
