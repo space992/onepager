@@ -1072,6 +1072,11 @@
 
                     <!-- Step 1: Service Selection -->
                     <div id="booking-step-1" class="space-y-8">
+                        <div class="mb-6 text-center">
+                            <p class="text-stone-500 font-light italic font-geist text-sm">
+                                Vyberte si službu, která odpovídá vašim potřebám
+                            </p>
+                        </div>
                         <h3 class="text-xl font-geist font-medium text-stone-900 mb-6">Vyberte službu</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <button onclick="selectService('Endosphere Therapy - Tělo', '2 200 Kč')"
@@ -1110,6 +1115,11 @@
 
                     <!-- Step 2: Date & Time -->
                     <div id="booking-step-2" class="hidden space-y-8">
+                        <div class="mb-6 text-center">
+                            <p class="text-stone-500 font-light italic font-geist text-sm">
+                                Vyberte termín, který vám vyhovuje
+                            </p>
+                        </div>
                         <h3 class="text-xl font-geist font-medium text-stone-900 mb-6">Vyberte termín</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div>
@@ -1142,6 +1152,11 @@
 
                     <!-- Step 3: Contact -->
                     <div id="booking-step-3" class="hidden space-y-8">
+                        <div class="mb-6 text-center">
+                            <p class="text-stone-500 font-light italic font-geist text-sm">
+                                Zanechte nám prosím své kontaktní údaje
+                            </p>
+                        </div>
                         <h3 class="text-xl font-geist font-medium text-stone-900 mb-6">Kontaktní údaje</h3>
                         <div class="space-y-4">
                             <div>
@@ -1190,8 +1205,13 @@
                                     <path d="M20 6 9 17l-5-5" />
                                 </svg>
                             </div>
-                            <h3 class="text-2xl font-cormorant text-stone-900 mb-2">Rezervace odeslána</h3>
-                            <p class="text-stone-500 font-geist">Děkujeme, Jano. Potvrzení vám přijde na email.</p>
+                            <h3 class="text-2xl font-cormorant text-stone-900 mb-3">Rezervace odeslána</h3>
+                            <p class="text-stone-600 font-geist mb-4">
+                                Děkujeme za vaši rezervaci. Brzy vám zavoláme s potvrzením termínu.
+                            </p>
+                            <p class="text-stone-500 font-geist text-sm font-light">
+                                Další detaily a pokyny před návštěvou vám zašleme na váš email.
+                            </p>
                         </div>
                     </div>
 
@@ -1238,131 +1258,9 @@
                     </button>
                 </div>
 
-                <!-- Body (Scrollable) -->
-                <div class="flex-1 overflow-y-auto p-6 md:p-8 lg:p-12 space-y-10 md:space-y-12 pb-24 md:pb-12">
-
-                    <!-- Category: Endosphere -->
-                    <div>
-                        <h3 class="font-cormorant text-2xl text-stone-900 mb-6 border-b border-stone-100 pb-2">
-                            Endosphere Therapy
-                        </h3>
-                        <div class="space-y-6 md:space-y-4">
-                            <div class="flex justify-between items-baseline group">
-                                <span
-                                    class="font-geist text-stone-600 group-hover:text-stone-900 transition-colors text-sm md:text-base">Tělo
-                                    - 1 ošetření (60 min)</span>
-                                <span class="font-geist font-medium text-stone-900 text-sm md:text-base">2 200 Kč</span>
-                            </div>
-                            <div class="flex justify-between items-baseline group">
-                                <span
-                                    class="font-geist text-stone-600 group-hover:text-stone-900 transition-colors text-sm md:text-base">Tělo
-                                    - Balíček 6 ošetření</span>
-                                <span class="font-geist font-medium text-stone-900 text-sm md:text-base">11 000
-                                    Kč</span>
-                            </div>
-                            <div class="flex justify-between items-baseline group">
-                                <span
-                                    class="font-geist text-stone-600 group-hover:text-stone-900 transition-colors text-sm md:text-base">Tělo
-                                    - Balíček 12 ošetření</span>
-                                <span class="font-geist font-medium text-stone-900 text-sm md:text-base">20 000
-                                    Kč</span>
-                            </div>
-                            <div class="flex justify-between items-baseline group pt-2">
-                                <span
-                                    class="font-geist text-stone-600 group-hover:text-stone-900 transition-colors text-sm md:text-base">Obličej
-                                    - 1 ošetření (45 min)</span>
-                                <span class="font-geist font-medium text-stone-900 text-sm md:text-base">1 800 Kč</span>
-                            </div>
-                            <div class="flex justify-between items-baseline group">
-                                <span
-                                    class="font-geist text-stone-600 group-hover:text-stone-900 transition-colors text-sm md:text-base">Obličej
-                                    - Balíček 6 ošetření</span>
-                                <span class="font-geist font-medium text-stone-900 text-sm md:text-base">9 000 Kč</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Category: HIFU -->
-                    <div>
-                        <h3 class="font-cormorant text-2xl text-stone-900 mb-6 border-b border-stone-100 pb-2">
-                            HIFU Lifting
-                        </h3>
-                        <div class="space-y-6 md:space-y-4">
-                            <div class="flex justify-between items-baseline group">
-                                <span
-                                    class="font-geist text-stone-600 group-hover:text-stone-900 transition-colors text-sm md:text-base">Celý
-                                    obličej (Full Face)</span>
-                                <span class="font-geist font-medium text-stone-900 text-sm md:text-base">8 500 Kč</span>
-                            </div>
-                            <div class="flex justify-between items-baseline group">
-                                <span
-                                    class="font-geist text-stone-600 group-hover:text-stone-900 transition-colors text-sm md:text-base">Oblast
-                                    očí a čela</span>
-                                <span class="font-geist font-medium text-stone-900 text-sm md:text-base">4 500 Kč</span>
-                            </div>
-                            <div class="flex justify-between items-baseline group">
-                                <span
-                                    class="font-geist text-stone-600 group-hover:text-stone-900 transition-colors text-sm md:text-base">Podbradek
-                                    a krk</span>
-                                <span class="font-geist font-medium text-stone-900 text-sm md:text-base">4 500 Kč</span>
-                            </div>
-                            <div class="flex justify-between items-baseline group">
-                                <span
-                                    class="font-geist text-stone-600 group-hover:text-stone-900 transition-colors text-sm md:text-base">Dekolt</span>
-                                <span class="font-geist font-medium text-stone-900 text-sm md:text-base">5 500 Kč</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Category: Hair -->
-                    <div>
-                        <h3 class="font-cormorant text-2xl text-stone-900 mb-6 border-b border-stone-100 pb-2">
-                            Vlasová péče
-                        </h3>
-                        <div class="space-y-6 md:space-y-4">
-                            <div class="flex justify-between items-baseline group">
-                                <span
-                                    class="font-geist text-stone-600 group-hover:text-stone-900 transition-colors text-sm md:text-base">Vlasová
-                                    mezoterapie</span>
-                                <span class="font-geist font-medium text-stone-900 text-sm md:text-base">2 500 Kč</span>
-                            </div>
-                            <div class="flex justify-between items-baseline group">
-                                <span
-                                    class="font-geist text-stone-600 group-hover:text-stone-900 transition-colors text-sm md:text-base">Prodlužování
-                                    vlasů (Konzultace)</span>
-                                <span class="font-geist font-medium text-stone-900 text-sm md:text-base">Zdarma</span>
-                            </div>
-                            <div class="flex justify-between items-baseline group">
-                                <span
-                                    class="font-geist text-stone-600 group-hover:text-stone-900 transition-colors text-sm md:text-base">Aplikace
-                                    Nano-Ring (1 pramen)</span>
-                                <span class="font-geist font-medium text-stone-900 text-sm md:text-base">od 80 Kč</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Category: Other -->
-                    <div>
-                        <h3 class="font-cormorant text-2xl text-stone-900 mb-6 border-b border-stone-100 pb-2">
-                            Ostatní
-                        </h3>
-                        <div class="space-y-6 md:space-y-4">
-                            <div class="flex justify-between items-baseline group">
-                                <span
-                                    class="font-geist text-stone-600 group-hover:text-stone-900 transition-colors text-sm md:text-base">Konzultace
-                                    (30 min)</span>
-                                <span class="font-geist font-medium text-stone-900 text-sm md:text-base">500 Kč</span>
-                            </div>
-                            <div class="flex justify-between items-baseline group">
-                                <span
-                                    class="font-geist text-stone-600 group-hover:text-stone-900 transition-colors text-sm md:text-base">Dárkový
-                                    poukaz</span>
-                                <span class="font-geist font-medium text-stone-900 text-sm md:text-base">Volitelná
-                                    částka</span>
-                            </div>
-                        </div>
-                    </div>
-
+                <!-- Body (Scrollable) - Dynamically populated by app.js -->
+                <div class="flex-1 overflow-y-auto p-6 md:p-8 lg:p-12">
+                    <!-- Content will be dynamically generated -->
                 </div>
 
                 <!-- Footer CTA -->
