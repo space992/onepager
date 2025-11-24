@@ -43,45 +43,15 @@ let servicesData = [];
 let pricesData = [];
 
 // Image URL mapping for Vercel Blob Storage
-const IMAGE_URL_MAP = {
-    "ems1.jpg": "https://omf77i7evqckneoq.public.blob.vercel-storage.com/ems1-VpCDM1SgM1hDblovHAEmAGacvEhuBW.jpg",
-    "ems2.jpg": "https://omf77i7evqckneoq.public.blob.vercel-storage.com/ems2-nExITxvKZlsObO7A7LGqDAexmEtFcT.jpg",
-    "endos-1.jpg": "https://omf77i7evqckneoq.public.blob.vercel-storage.com/endos-1-O0CFvysc1NoMHUAvDrc594UMWmC0rJ.jpg",
-    "endos-1.jpeg": "https://omf77i7evqckneoq.public.blob.vercel-storage.com/endos-1-O0CFvysc1NoMHUAvDrc594UMWmC0rJ.jpg",
-    "endos-2.jpg": "https://omf77i7evqckneoq.public.blob.vercel-storage.com/endos-2-dgtyicsefLl4Xhod9Hs0glKY7ih5XI.jpg",
-    "endos-2.jpeg": "https://omf77i7evqckneoq.public.blob.vercel-storage.com/endos-2-dgtyicsefLl4Xhod9Hs0glKY7ih5XI.jpg",
-    "endos-3.jpg": "https://omf77i7evqckneoq.public.blob.vercel-storage.com/endos-3-qGwINhi2h7cgEc6QWrDiJti9l6Vvx6.jpg",
-    "endos-3.jpeg": "https://omf77i7evqckneoq.public.blob.vercel-storage.com/endos-3-qGwINhi2h7cgEc6QWrDiJti9l6Vvx6.jpg",
-    "hifu-1.jpg": "https://omf77i7evqckneoq.public.blob.vercel-storage.com/hifu-1-A8WNU27cpN1qnPzmKlvxMcNPst8QXa.jpg",
-    "hifu-3.jpg": "https://omf77i7evqckneoq.public.blob.vercel-storage.com/hifu-3-sYDJhEagJgSzLitKXiUMq7ggbLFgY0.jpg",
-    "kavitace-1.jpg": "https://omf77i7evqckneoq.public.blob.vercel-storage.com/kavitace-1-xUsBxaeiu6grsA4NCFR9fNr67vw41E.jpg",
-    "kavitace-1.jpeg": "https://omf77i7evqckneoq.public.blob.vercel-storage.com/kavitace-1-xUsBxaeiu6grsA4NCFR9fNr67vw41E.jpg",
-    "kavitace-2.jpg": "https://omf77i7evqckneoq.public.blob.vercel-storage.com/kavitace-2-ayT8umNr7uPl0OZdVOs7yYELVNyzVM.jpg",
-    "kavitace-2.jpeg": "https://omf77i7evqckneoq.public.blob.vercel-storage.com/kavitace-2-ayT8umNr7uPl0OZdVOs7yYELVNyzVM.jpg",
-    "lpg-1.jpg": "https://omf77i7evqckneoq.public.blob.vercel-storage.com/lpg-1-JlUl9IXLuZB6FeCVhyk9pnq9bmy3zL.jpg",
-    "rasy-1.jpg": "https://omf77i7evqckneoq.public.blob.vercel-storage.com/rasy-1-XJLlYZi0NAqUXvGIwh7LTc4i5gyt5d.jpg",
-    "rasy-2.jpg": "https://omf77i7evqckneoq.public.blob.vercel-storage.com/rasy-2-AgJGRp9kpUIsYleekAI6K4DWweSk0P.jpg",
-    "rasy-3.jpg": "https://omf77i7evqckneoq.public.blob.vercel-storage.com/rasy-3-mg1uWi0jmrEXWIV6Eza88P7zUMVVB0.jpg",
-    "rasy4.jpg": "https://omf77i7evqckneoq.public.blob.vercel-storage.com/rasy4-ZVSplFIhIS7Uz8zMryaLpIBZhxvHWJ.jpg",
-    "skin-calming-with-propolis1.jpg": "https://omf77i7evqckneoq.public.blob.vercel-storage.com/skin-calming-with-propolis1-xs6afe6pbJMQIjlUeOZoSZ5zgXYByq.jpg",
-    "skin-calming-with-propolis4.jpg": "https://omf77i7evqckneoq.public.blob.vercel-storage.com/skin-calming-with-propolis4-K4DrkeS0XkhDET73aVhzJJmxbEwTHh.jpg",
-    "skin-calming-with-propolis5.jpg": "https://omf77i7evqckneoq.public.blob.vercel-storage.com/skin-calming-with-propolis5-k1ReBHJD0AeMZNDdPkZfFdcimWajpc.jpg",
-    "skin-calming-with-propolis6.jpg": "https://omf77i7evqckneoq.public.blob.vercel-storage.com/skin-calming-with-propolis6-jUPlOT7D1KRgdPOkYGkKVGyCIvcQ7x.jpg",
-    "skin-calming-with-propolis9.jpg": "https://omf77i7evqckneoq.public.blob.vercel-storage.com/skin-calming-with-propolis9-vT6SER5ioHsFIUSJepWkL7fXhLBoxD.jpg",
-    "hydratational-17.jpg": "https://omf77i7evqckneoq.public.blob.vercel-storage.com/hydratational-17-OQtGEz9YXeHnteOqc2cmE3H7KeFhtr.jpg",
-    "hydratational-18.jpg": "https://omf77i7evqckneoq.public.blob.vercel-storage.com/hydratational-18-9WQ1EP1qrL8KmTggTJHhGtRy1uAi23.jpg",
-    "sabina.jpg": "https://omf77i7evqckneoq.public.blob.vercel-storage.com/sabina-OiqwiffUDfug0q2qgFfLqPjvpyRc9N.jpg",
-    "towel.jpg": "https://omf77i7evqckneoq.public.blob.vercel-storage.com/towel-dELH4lXpwFGmX8cPHlIdOFyDXpbr54.jpg"
-};
+// Image URL mapping removed - using direct URLs from CSV
 
 // Helper function to get image URL
 function getImageUrl(imagePath) {
-    // Remove directory prefix if present
-    const filename = imagePath.split('/').pop();
+    if (!imagePath) return '';
 
-    // Return Vercel Blob URL if available
-    if (IMAGE_URL_MAP[filename]) {
-        return IMAGE_URL_MAP[filename];
+    // Return URL directly if it's already a full URL (from Blob)
+    if (imagePath.startsWith('http')) {
+        return imagePath;
     }
 
     // Fallback: try local path

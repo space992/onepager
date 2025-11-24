@@ -1,0 +1,7 @@
+.vercel
+.env*.local
+node_modules
+.DS_Store
+check-images.js
+list-blobs.js
+update-services.js

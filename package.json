@@ -1,7 +1,5 @@
 {
-  "type": "module",
   "dependencies": {
-    "@vercel/blob": "^0.23.0",
-    "dotenv": "^16.3.1"
+    "@vercel/blob": "^2.0.0"
   }
 }
